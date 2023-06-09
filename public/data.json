@@ -879,7 +879,8 @@
             "restaurantname": "效果演示",
             "restaurantid": 1,
             "restaurantAddress": "广东省xx市xx区xx路xx号",
-            "foodstuffclassify": "热销榜"
+            "foodstuffclassify": "热销榜",
+            "foodsp":"新疆大盘鸡"
          }
       ],
       "ordersList": [
