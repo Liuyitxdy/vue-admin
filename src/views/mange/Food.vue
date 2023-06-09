@@ -5,6 +5,7 @@
       <el-table-column type="expand">
         <template slot-scope="props">
           <el-form label-position="left" inline class="demo-table-expand">
+<<<<<<< HEAD
             <el-form-item label="食品名称" align="center">
               <span>{{ props.row.foodstuffinName }}</span>
             </el-form-item>
@@ -30,11 +31,39 @@
               <span>{{ props.row.foodstuffclassify }}</span>
             </el-form-item>
             <el-form-item label="月销量" align="center">
+=======
+            <el-form-item label="食品名称">
+              <span>{{ props.row.foodstuffinName }}</span>
+            </el-form-item>
+            <el-form-item label="餐馆名称">
+              <span>{{ props.row.restaurantname }}</span>
+            </el-form-item>
+            <el-form-item label="食品ID">
+              <span>{{ props.row.foodstuffid }}</span>
+            </el-form-item>
+            <el-form-item label="餐馆 ID">
+              <span>{{ props.row.foodstuffid }}</span>
+            </el-form-item>
+            <el-form-item label="食品介绍">
+              <span>{{ props.row.restaurantjs }}</span>
+            </el-form-item>
+            <el-form-item label="餐馆地址">
+              <span>{{ props.row.restaurantAddress }}</span>
+            </el-form-item>
+            <el-form-item label="食品评分">
+              <span>{{ props.row.foodstuffSc }}</span>
+            </el-form-item>
+            <el-form-item label="食品分类">
+              <span>{{ props.row.foodstuffclassify }}</span>
+            </el-form-item>
+            <el-form-item label="月销量">
+>>>>>>> 33fffab427cfaba7da2e4cd968806500db63d815
               <span>{{ props.row.foodstuffSales }}</span>
             </el-form-item>
           </el-form>
         </template>
       </el-table-column>
+<<<<<<< HEAD
       <el-table-column label="食品名称" prop="foodstuffinName" align="center">
       </el-table-column>
       <el-table-column label="食品介绍" prop="pricrsum" align="center">
@@ -62,6 +91,17 @@
               </div>
             </el-dialog>
           </el-button>
+=======
+      <el-table-column label="食品名称" prop="foodstuffinName">
+      </el-table-column>
+      <el-table-column label="食品介绍" prop="restaurantjs"> </el-table-column>
+      <el-table-column label="评分" prop="foodstuffSc"> </el-table-column>
+      <el-table-column label="操作">
+        <template slot-scope="scope">
+          <el-button size="mini" @click="handleEdit(scope.$index, scope.row)"
+            >编辑</el-button
+          >
+>>>>>>> 33fffab427cfaba7da2e4cd968806500db63d815
           <el-button
             size="mini"
             type="danger"
@@ -81,6 +121,7 @@ export default {
   data() {
     return {
       foodstuffList: [],
+<<<<<<< HEAD
       dialogTableVisible: false,
       dialogFormVisible: false,
       form: {
@@ -94,6 +135,8 @@ export default {
         desc: "",
       },
       formLabelWidth: "120px",
+=======
+>>>>>>> 33fffab427cfaba7da2e4cd968806500db63d815
     };
   },
   mounted() {
@@ -129,4 +172,8 @@ export default {
 el-table-column {
   background-color: #eef0f5 !important;
 }
+<<<<<<< HEAD
 </style>
+=======
+</style>
+>>>>>>> 33fffab427cfaba7da2e4cd968806500db63d815
