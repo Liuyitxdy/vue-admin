@@ -1,0 +1,906 @@
+{
+   "status": true,
+   "data": {
+      "dayData":[
+         {
+            "id": 1,
+            "addUser": 23,
+            "addAdmin": 13,
+            "regUser": 78645,
+            "orders": 45684,
+            "totalAdmin": 131064,
+            "date": "2023-06-03",
+            "addOrders":45
+          },
+          {
+            "id": 2,
+            "addUser": 12,
+            "addAdmin": 16,
+            "regUser": 79000,
+            "orders": 46000,
+            "totalAdmin": 131414,
+            "date": "2023-06-04",
+            "addOrders":75
+          },
+          {
+            "id": 3,
+            "addUser": 8,
+            "addAdmin": 45,
+            "regUser": 79355,
+            "orders": 46316,
+            "totalAdmin": 131769,
+            "date": "2023-06-05",
+            "addOrders":68
+          },
+          {
+            "id": 4,
+            "addUser": 9,
+            "addAdmin": 24,
+            "regUser": 79720,
+            "orders": 46656,
+            "totalAdmin": 132129,
+            "date": "2023-06-06",
+            "addOrders":78
+          },
+          {
+            "id": 5,
+            "addUser": 4,
+            "addAdmin": 23,
+            "regUser": 80095,
+            "orders": 47011,
+            "totalAdmin": 132494,
+            "date": "2023-06-07",
+            "addOrders":14
+          },
+          {
+            "id": 6,
+            "addUser": 9,
+            "addAdmin": 66,
+            "regUser": 80480,
+            "orders": 47381,
+            "totalAdmin": 132864,
+            "date": "2023-06-08",
+            "addOrders":98
+          },
+          {
+            "id": 7,
+            "addUser": 7,
+            "addAdmin": 75,
+            "regUser": 80875,
+            "orders": 47766,
+            "totalAdmin": 133239,
+            "date": "2023-06-09",
+            "addOrders":69
+          }
+      ],
+      "userList": [
+         {
+            "id": 1,
+            "register": "2022-03-15",
+            "userName": "John Smith",
+            "address": "成都"
+         },
+         {
+            "id": 2,
+            "register": "2021-08-27",
+            "userName": "Emily Johnson",
+            "address": "成都"
+         },
+         {
+            "id": 3,
+            "register": "2023-01-10",
+            "userName": "Michael Brown",
+            "address": "北京"
+         },
+         {
+            "id": 4,
+            "register": "2022-07-02",
+            "userName": "Sophia Davis",
+            "address": "上海"
+         },
+         {
+            "id": 5,
+            "register": "2022-09-18",
+            "userName": "Jacob Wilson",
+            "address": "广州"
+         },
+         {
+            "id": 6,
+            "register": "2021-12-05",
+            "userName": "Emma Martinez",
+            "address": "深圳"
+         },
+         {
+            "id": 7,
+            "register": "2023-05-20",
+            "userName": "William Anderson",
+            "address": "成都"
+         },
+         {
+            "id": 8,
+            "register": "2022-06-08",
+            "userName": "Olivia Taylor",
+            "address": "北京"
+         },
+         {
+            "id": 9,
+            "register": "2022-02-14",
+            "userName": "James Clark",
+            "address": "上海"
+         },
+         {
+            "id": 10,
+            "register": "2021-10-30",
+            "userName": "Ava Rodriguez",
+            "address": "广州"
+         },
+         {
+            "id": 11,
+            "register": "2023-03-12",
+            "userName": "Alexander Lee",
+            "address": "深圳"
+         },
+         {
+            "id": 12,
+            "register": "2022-05-29",
+            "userName": "Mia Hall",
+            "address": "成都"
+         },
+         {
+            "id": 13,
+            "register": "2022-01-02",
+            "userName": "Benjamin Lopez",
+            "address": "北京"
+         },
+         {
+            "id": 14,
+            "register": "2023-04-17",
+            "userName": "Charlotte Hernandez",
+            "address": "上海"
+         },
+         {
+            "id": 15,
+            "register": "2022-08-13",
+            "userName": "Elijah Martinez",
+            "address": "广州"
+         },
+         {
+            "id": 16,
+            "register": "2021-11-26",
+            "userName": "Amelia Green",
+            "address": "深圳"
+         },
+         {
+            "id": 17,
+            "register": "2022-04-08",
+            "userName": "Lucas Thompson",
+            "address": "成都"
+         },
+         {
+            "id": 18,
+            "register": "2021-12-22",
+            "userName": "Sophie Hill",
+            "address": "北京"
+         },
+         {
+            "id": 19,
+            "register": "2022-10-07",
+            "userName": "Henry Adams",
+            "address": "上海"
+         },
+         {
+            "id": 20,
+            "register": "2022-02-19",
+            "userName": "Chloe Lewis",
+            "address": "广州"
+         },
+         {
+            "id": 21,
+            "register": "2023-03-26",
+            "userName": "Daniel Carter",
+            "address": "深圳"
+         },
+         {
+            "id": 22,
+            "register": "2022-06-12",
+            "userName": "Grace Martinez",
+            "address": "成都"
+         },
+         {
+            "id": 23,
+            "register": "2022-01-25",
+            "userName": "Logan White",
+            "address": "北京"
+         },
+         {
+            "id": 24,
+            "register": "2023-05-01",
+            "userName": "Lily Rodriguez",
+            "address": "上海"
+         },
+         {
+            "id": 25,
+            "register": "2022-08-17",
+            "userName": "Carter Turner",
+            "address": "广州"
+         },
+         {
+            "id": 26,
+            "register": "2021-11-30",
+            "userName": "Madison Wright",
+            "address": "深圳"
+         },
+         {
+            "id": 27,
+            "register": "2022-04-13",
+            "userName": "Sebastian Scott",
+            "address": "成都"
+         },
+         {
+            "id": 28,
+            "register": "2021-12-26",
+            "userName": "Avery Martinez",
+            "address": "北京"
+         },
+         {
+            "id": 29,
+            "register": "2023-04-02",
+            "userName": "Evelyn Cooper",
+            "address": "上海"
+         },
+         {
+            "id": 30,
+            "register": "2022-10-18",
+            "userName": "Mateo Young",
+            "address": "广州"
+         },
+         {
+            "id": 31,
+            "register": "2022-02-01",
+            "userName": "Harper Stewart",
+            "address": "深圳"
+         },
+         {
+            "id": 32,
+            "register": "2023-03-08",
+            "userName": "Liam Bell",
+            "address": "成都"
+         },
+         {
+            "id": 33,
+            "register": "2022-05-23",
+            "userName": "Abigail Collins",
+            "address": "北京"
+         },
+         {
+            "id": 34,
+            "register": "2022-01-07",
+            "userName": "Jackson Turner",
+            "address": "上海"
+         },
+         {
+            "id": 35,
+            "register": "2023-04-22",
+            "userName": "Ella Walker",
+            "address": "广州"
+         },
+         {
+            "id": 36,
+            "register": "2022-08-06",
+            "userName": "Christopher Davis",
+            "address": "深圳"
+         },
+         {
+            "id": 37,
+            "register": "2021-11-19",
+            "userName": "Scarlett Hill",
+            "address": "成都"
+         },
+         {
+            "id": 38,
+            "register": "2021-12-03",
+            "userName": "Ryan Adams",
+            "address": "北京"
+         },
+         {
+            "id": 39,
+            "register": "2023-05-17",
+            "userName": "Victoria Morgan",
+            "address": "上海"
+         },
+         {
+            "id": 40,
+            "register": "2022-08-30",
+            "userName": "Noah Turner",
+            "address": "广州"
+         },
+         {
+            "id": 41,
+            "register": "2021-11-12",
+            "userName": "Sofia King",
+            "address": "深圳"
+         },
+         {
+            "id": 42,
+            "register": "2022-04-27",
+            "userName": "David Perez",
+            "address": "成都"
+         },
+         {
+            "id": 43,
+            "register": "2021-12-10",
+            "userName": "Aria Scott",
+            "address": "北京"
+         },
+         {
+            "id": 44,
+            "register": "2023-03-24",
+            "userName": "Joseph Ward",
+            "address": "上海"
+         },
+         {
+            "id": 45,
+            "register": "2022-06-20",
+            "userName": "Scarlet Collins",
+            "address": "广州"
+         },
+         {
+            "id": 46,
+            "register": "2022-02-04",
+            "userName": "Samuel Bell",
+            "address": "深圳"
+         },
+         {
+            "id": 47,
+            "register": "2023-01-19",
+            "userName": "Grace Phillips",
+            "address": "成都"
+         },
+         {
+            "id": 48,
+            "register": "2022-07-12",
+            "userName": "Victoria Martin",
+            "address": "北京"
+         },
+         {
+            "id": 49,
+            "register": "2022-03-27",
+            "userName": "Aiden Adams",
+            "address": "上海"
+         },
+         {
+            "id": 50,
+            "register": "2021-09-10",
+            "userName": "Elizabeth Parker",
+            "address": "广州"
+         }
+      ],
+      "busList": [
+          {
+            "id": 1,
+            "shopName": "效果演示",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "asdas",
+            "shopPhone": 13235461234,
+            "shopSc": 4.7,
+            "shopSales": 106,
+            "shopClassify": "快餐便当",
+            "shopClassifyItem": "简餐"
+         },
+         {
+            "id": 2,
+            "shopName": "美味堂",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "欢迎品尝正宗美味",
+            "shopPhone": 13567891234,
+            "shopSc": 4.5,
+            "shopSales": 92,
+            "shopClassify": "中餐",
+            "shopClassifyItem": "川菜"
+         },
+         {
+            "id": 3,
+            "shopName": "Pizza House",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "新鲜出炉的披萨",
+            "shopPhone": 13876543210,
+            "shopSc": 4.8,
+            "shopSales": 145,
+            "shopClassify": "快餐便当",
+            "shopClassifyItem": "披萨"
+         },
+         {
+            "id": 4,
+            "shopName": "香辣烤鱼",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "正宗四川风味烤鱼",
+            "shopPhone": 13987654321,
+            "shopSc": 4.6,
+            "shopSales": 78,
+            "shopClassify": "火锅",
+            "shopClassifyItem": "烤鱼"
+         },
+         {
+            "id": 5,
+            "shopName": "鲜花店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "送上最美的鲜花",
+            "shopPhone": 13245987654,
+            "shopSc": 4.9,
+            "shopSales": 201,
+            "shopClassify": "鲜花礼品",
+            "shopClassifyItem": "鲜花"
+         },
+         {
+            "id": 6,
+            "shopName": "健身房",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "打造完美身材",
+            "shopPhone": 13654987654,
+            "shopSc": 4.7,
+            "shopSales": 156,
+            "shopClassify": "健身",
+            "shopClassifyItem": "健身房"
+         },
+         {
+            "id": 7,
+            "shopName": "咖啡屋",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "浓郁香醇的咖啡",
+            "shopPhone": 13109876543,
+            "shopSc": 4.8,
+            "shopSales": 120,
+            "shopClassify": "咖啡",
+            "shopClassifyItem": "咖啡屋"
+         },
+         {
+            "id": 8,
+            "shopName": "服装店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "时尚潮流的服饰",
+            "shopPhone": 13987654321,
+            "shopSc": 4.6,
+            "shopSales": 89,
+            "shopClassify": "时尚",
+            "shopClassifyItem": "服装店"
+         },
+         {
+            "id": 9,
+            "shopName": "宠物店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "宠物用品一站式购买",
+            "shopPhone": 13876543210,
+            "shopSc": 4.9,
+            "shopSales": 135,
+            "shopClassify": "宠物",
+            "shopClassifyItem": "宠物店"
+         },
+         {
+            "id": 10,
+            "shopName": "书店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "文学艺术的天堂",
+            "shopPhone": 13567891234,
+            "shopSc": 4.7,
+            "shopSales": 102,
+            "shopClassify": "文化教育",
+            "shopClassifyItem": "书店"
+         },
+         {
+            "id": 11,
+            "shopName": "甜品屋",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "甜蜜美味的诱惑",
+            "shopPhone": 13235461234,
+            "shopSc": 4.8,
+            "shopSales": 128,
+            "shopClassify": "甜点饮品",
+            "shopClassifyItem": "甜品屋"
+         },
+         {
+            "id": 12,
+            "shopName": "美容院",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "焕发青春美丽",
+            "shopPhone": 13987654321,
+            "shopSc": 4.6,
+            "shopSales": 87,
+            "shopClassify": "美容",
+            "shopClassifyItem": "美容院"
+         },
+         {
+            "id": 13,
+            "shopName": "家居商店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "打造温馨舒适的家",
+            "shopPhone": 13876543210,
+            "shopSc": 4.8,
+            "shopSales": 118,
+            "shopClassify": "家居生活",
+            "shopClassifyItem": "家居商店"
+         },
+         {
+            "id": 14,
+            "shopName": "瑜伽馆",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "修身养性的运动",
+            "shopPhone": 13567891234,
+            "shopSc": 4.9,
+            "shopSales": 145,
+            "shopClassify": "健身",
+            "shopClassifyItem": "瑜伽馆"
+         },
+         {
+            "id": 15,
+            "shopName": "火锅店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "麻辣鲜香的火锅",
+            "shopPhone": 13235461234,
+            "shopSc": 4.7,
+            "shopSales": 102,
+            "shopClassify": "火锅",
+            "shopClassifyItem": "火锅店"
+         },
+         {
+            "id": 16,
+            "shopName": "文具店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "书写美好的时刻",
+            "shopPhone": 13987654321,
+            "shopSc": 4.6,
+            "shopSales": 78,
+            "shopClassify": "文化教育",
+            "shopClassifyItem": "文具店"
+         },
+         {
+            "id": 17,
+            "shopName": "烧烤店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "美味多汁的烧烤",
+            "shopPhone": 13876543210,
+            "shopSc": 4.8,
+            "shopSales": 122,
+            "shopClassify": "烧烤",
+            "shopClassifyItem": "烧烤店"
+         },
+         {
+            "id": 18,
+            "shopName": "宝宝用品店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "贴心关怀宝宝成长",
+            "shopPhone": 13567891234,
+            "shopSc": 4.9,
+            "shopSales": 150,
+            "shopClassify": "母婴",
+            "shopClassifyItem": "宝宝用品店"
+         },
+         {
+            "id": 19,
+            "shopName": "面包店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "香气四溢的面包",
+            "shopPhone": 13235461234,
+            "shopSc": 4.7,
+            "shopSales": 98,
+            "shopClassify": "糕点面包",
+            "shopClassifyItem": "面包店"
+         },
+         {
+            "id": 20,
+            "shopName": "眼镜店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "时尚个性的眼镜",
+            "shopPhone": 13987654321,
+            "shopSc": 4.6,
+            "shopSales": 85,
+            "shopClassify": "时尚",
+            "shopClassifyItem": "眼镜店"
+         },
+         {
+            "id": 21,
+            "shopName": "酒吧",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "独特的酒吧体验",
+            "shopPhone": 13876543210,
+            "shopSc": 4.8,
+            "shopSales": 110,
+            "shopClassify": "酒吧",
+            "shopClassifyItem": "酒吧"
+         },
+         {
+            "id": 22,
+            "shopName": "旅行社",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "畅游世界的梦想",
+            "shopPhone": 13567891234,
+            "shopSc": 4.9,
+            "shopSales": 180,
+            "shopClassify": "旅游",
+            "shopClassifyItem": "旅行社"
+         },
+         {
+            "id": 23,
+            "shopName": "手表店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "永恒流动的时间",
+            "shopPhone": 13235461234,
+            "shopSc": 4.7,
+            "shopSales": 95,
+            "shopClassify": "奢侈品",
+            "shopClassifyItem": "手表店"
+         },
+         {
+            "id": 24,
+            "shopName": "西餐厅",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "品味西方美食",
+            "shopPhone": 13987654321,
+            "shopSc": 4.6,
+            "shopSales": 82,
+            "shopClassify": "西餐",
+            "shopClassifyItem": "西餐厅"
+         },
+         {
+            "id": 25,
+            "shopName": "水果店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "新鲜多汁的水果",
+            "shopPhone": 13876543210,
+            "shopSc": 4.8,
+            "shopSales": 126,
+            "shopClassify": "生鲜",
+            "shopClassifyItem": "水果店"
+         },
+         {
+            "id": 26,
+            "shopName": "汽车修理厂",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "专业修复您的爱车",
+            "shopPhone": 13567891234,
+            "shopSc": 4.9,
+            "shopSales": 155,
+            "shopClassify": "汽车","shopClassifyItem": "汽车修理厂"
+         },
+         {
+         "id": 27,
+         "shopName": "美甲店",
+         "shopAddress": "广东省xx市xx区xx路xx号",
+         "shopIntroduce": "精致美丽的指尖艺术",
+         "shopPhone": 13235461234,
+         "shopSc": 4.7,
+         "shopSales": 103,
+         "shopClassify": "美容",
+         "shopClassifyItem": "美甲店"
+         },
+         {
+         "id": 28,
+         "shopName": "电器商店",
+         "shopAddress": "广东省xx市xx区xx路xx号",
+         "shopIntroduce": "家居电器一站购齐",
+         "shopPhone": 13987654321,
+         "shopSc": 4.6,
+         "shopSales": 88,
+         "shopClassify": "家电",
+         "shopClassifyItem": "电器商店"
+         },
+         {
+         "id": 29,
+         "shopName": "餐饮连锁",
+         "shopAddress": "广东省xx市xx区xx路xx号",
+         "shopIntroduce": "多种美食尽在一店",
+         "shopPhone": 13876543210,
+         "shopSc": 4.8,
+         "shopSales": 121,
+         "shopClassify": "快餐便当",
+         "shopClassifyItem": "餐饮连锁"
+         },
+         {
+         "id": 30,
+         "shopName": "游戏中心",
+         "shopAddress": "广东省xx市xx区xx路xx号",
+         "shopIntroduce": "畅玩游戏的乐园",
+         "shopPhone": 13567891234,
+         "shopSc": 4.9,
+         "shopSales": 166,
+         "shopClassify": "娱乐",
+         "shopClassifyItem": "游戏中心"
+         },
+         {
+         "id": 31,
+         "shopName": "电影院",
+         "shopAddress": "广东省xx市xx区xx路xx号",
+         "shopIntroduce": "最新热门电影放映",
+         "shopPhone": 13235461234,
+         "shopSc": 4.7,
+         "shopSales": 110,
+         "shopClassify": "娱乐",
+         "shopClassifyItem": "电影院"
+         },
+         {
+         "id": 32,
+         "shopName": "医药店",
+         "shopAddress": "广东省xx市xx区xx路xx号",
+         "shopIntroduce": "健康生活的守护者",
+         "shopPhone": 13987654321,
+         "shopSc": 4.6,
+         "shopSales": 95,
+         "shopClassify": "医疗保健",
+         "shopClassifyItem": "医药店"
+         },{
+            "id": 33,
+            "shopName": "美发店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "打造时尚个性发型",
+            "shopPhone": 13876543210,
+            "shopSc": 4.8,
+            "shopSales": 128,
+            "shopClassify": "美容",
+            "shopClassifyItem": "美发店"
+            },
+            {
+            "id": 34,
+            "shopName": "早餐店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "早晨的美味开始",
+            "shopPhone": 13567891234,
+            "shopSc": 4.9,
+            "shopSales": 142,
+            "shopClassify": "快餐便当",
+            "shopClassifyItem": "早餐店"
+            },
+            {
+            "id": 35,
+            "shopName": "花店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "花开富贵的永恒",
+            "shopPhone": 13235461234,
+            "shopSc": 4.7,
+            "shopSales": 99,
+            "shopClassify": "礼品鲜花",
+            "shopClassifyItem": "花店"
+            },
+            {
+            "id": 36,
+            "shopName": "母婴店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "关爱宝宝的专业店",
+            "shopPhone": 13987654321,
+            "shopSc": 4.6,
+            "shopSales": 86,
+            "shopClassify": "母婴",
+            "shopClassifyItem": "母婴店"
+            },
+            {
+            "id": 37,
+            "shopName": "自助餐厅",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "百味美食尽在一身",
+            "shopPhone": 13876543210,
+            "shopSc": 4.8,
+            "shopSales": 115,
+            "shopClassify": "自助餐",
+            "shopClassifyItem": "自助餐厅"
+            },
+            {
+            "id": 38,
+            "shopName": "游泳馆",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "畅游健康的泳池",
+            "shopPhone": 13567891234,
+            "shopSc": 4.9,
+            "shopSales": 160,
+            "shopClassify": "健身",
+            "shopClassifyItem": "游泳馆"
+            },
+            {
+            "id": 39,
+            "shopName": "珠宝店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "闪耀华丽的珠宝",
+            "shopPhone": 13235461234,
+            "shopSc": 4.7,
+            "shopSales": 104,
+            "shopClassify": "奢侈品",
+            "shopClassifyItem": "珠宝店"
+            },
+            {
+            "id": 40,
+            "shopName": "书店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "阅读美好的故事",
+            "shopPhone": 13987654321,
+            "shopSc": 4.6,
+            "shopSales": 80,
+            "shopClassify": "文化教育",
+            "shopClassifyItem": "书店"
+            },
+            {
+            "id": 41,
+            "shopName": "家居商店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "打造温馨舒适的家",
+            "shopPhone": 13876543210,
+            "shopSc": 4.8,
+            "shopSales": 118,
+            "shopClassify": "家居生活",
+            "shopClassifyItem": "家居商店"
+            },
+            {
+            "id": 42,
+            "shopName": "瑜伽馆",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "修身养性的运动",
+            "shopPhone": 13567891234,
+            "shopSc": 4.9,
+            "shopSales": 145,
+            "shopClassify": "健身",
+            "shopClassifyItem": "瑜伽馆"
+            },
+            {
+            "id": 43,
+            "shopName": "火锅店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "麻辣鲜香的火锅",
+            "shopPhone": 13235461234,
+            "shopSc": 4.7,
+            "shopSales": 102,
+            "shopClassify": "火锅",
+            "shopClassifyItem": "火锅店"
+            },
+            {
+            "id": 44,
+            "shopName": "文具店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "书写美好的时刻",
+            "shopPhone": 13987654321,
+            "shopSc": 4.6,
+            "shopSales": 78,
+            "shopClassify": "文化教育",
+            "shopClassifyItem": "文具店"
+            },
+            {
+            "id": 45,
+            "shopName": "烧烤店",
+            "shopAddress": "广东省xx市xx区xx路xx号",
+            "shopIntroduce": "美味多汁的烧烤",
+            "shopPhone": 13876543210,
+            "shopSc": 4.8,
+            "shopSales": 122,
+            "shopClassify": "烧烤",
+            "shopClassifyItem": "烧烤店"
+            }
+      ],
+      "foodList": [
+         {
+            "foodstuffid": 9850,
+            "foodstuffinName": "大盘",
+            "foodstuffSc": 4.9,
+            "foodstuffSales": 243,
+            "restaurantname": "效果演示",
+            "restaurantid": 1,
+            "restaurantAddress": "广东省xx市xx区xx路xx号",
+            "foodstuffclassify": "热销榜"
+         }
+      ],
+      "ordersList": [
+         {
+            "ordersid": 33669,
+            "pricrsum": 674,
+            "orderstatus": "支付超出",
+            "name": "毛蛋",
+            "shopname": "毛蛋功夫店",
+            "receiptdz": "佛洛里达州",
+            "shopdz": "安徽省合肥市蜀山区东流路1O0号合肥市政务中心一区B座DD",
+            "shopid": 3284
+         }
+      ],
+      "adminiList": [
+         {
+            "administratorName": "毛蛋",
+            "dateOfRegistration": "2023-06-23 14：53",
+            "administratorAddress": "成都",
+            "might": "管理员"
+         }
+      ]
+   }
+}
