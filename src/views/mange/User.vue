@@ -1,91 +1,46 @@
 <template>
-  <div class="app-container">
-    <el-table
-      v-loading="listLoading"
-      :data="list"
-      element-loading-text="Loading"
-      border
-      fit
-      highlight-current-row
-    >
-      <el-table-column align="center" label="ID" width="95">
-        <template slot-scope="scope">
-          {{ scope.$index }}
-        </template>
-      </el-table-column>
-      <el-table-column label="Title">
-        <template slot-scope="scope">
-          {{ scope.row.title }}
-        </template>
-      </el-table-column>
-      <el-table-column label="Author" width="110" align="center">
-        <template slot-scope="scope">
-          <span>{{ scope.row.author }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column label="Pageviews" width="110" align="center">
-        <template slot-scope="scope">
-          {{ scope.row.pageviews }}
-        </template>
-      </el-table-column>
-      <el-table-column
-        class-name="status-col"
-        label="Status"
-        width="110"
-        align="center"
-      >
-        <template slot-scope="scope">
-          <el-tag :type="scope.row.status | statusFilter">{{
-            scope.row.status
-          }}</el-tag>
-        </template>
-      </el-table-column>
-      <el-table-column
-        align="center"
-        prop="created_at"
-        label="Display_time"
-        width="200"
-      >
-        <template slot-scope="scope">
-          <i class="el-icon-time" />
-          <span>{{ scope.row.display_time }}</span>
-        </template>
-      </el-table-column>
+  <div>
+    <el-table :data="userList" style="width: 100%">
+      <el-table-column prop="id" label="#" align="center" width="180" :cell-style="{ 'margin-left': '50px' }"></el-table-column>
+      <el-table-column prop="register" label="注册日期" width="180"></el-table-column>
+      <el-table-column prop="userName" label="用户姓名" width="180"></el-table-column>
+      <el-table-column prop="address" label="注册地址" align="center"></el-table-column>
     </el-table>
+    <div class="pagination-container">
+      <div class="text-container">共7596条</div>
+      <el-pagination background :current-page.sync="currentPage1" :total="7596" layout="prev, pager, next"></el-pagination>
+    </div>
   </div>
 </template>
 
 <script>
-import { getList } from "@/api/table";
-
+import http from "@/api/http.js";
 export default {
-  filters: {
-    statusFilter(status) {
-      const statusMap = {
-        published: "success",
-        draft: "gray",
-        deleted: "danger",
-      };
-      return statusMap[status];
-    },
-  },
+  name: "Home",
   data() {
     return {
-      list: null,
-      listLoading: true,
+      userList: [],
+      currentPage1: 1
     };
   },
-  created() {
-    this.fetchData();
-  },
-  methods: {
-    fetchData() {
-      this.listLoading = true;
-      getList().then((response) => {
-        this.list = response.data.items;
-        this.listLoading = false;
-      });
-    },
+  methods: {},
+  mounted() {
+    http.get("/data.json").then((res) => {
+      console.log(res.data.data.userList);
+      this.userList = res.data.data.userList;
+    });
   },
 };
 </script>
+
+<style>
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.text-container {
+  margin-right: 10px;
+}
+</style>
