@@ -903,6 +903,28 @@
             "administratorAddress": "成都",
             "might": "管理员"
          }
+      ],
+      "userdisc":[
+         {
+            "city":"广州",
+            "total":100
+         },
+         {
+            "city":"深圳",
+            "total":451
+         },
+         {
+            "city":"北京",
+            "total":2600
+         },
+         {
+            "city":"成都",
+            "total":1740
+         },
+         {
+            "city":"其他",
+            "total":3571
+         }
       ]
    }
 }

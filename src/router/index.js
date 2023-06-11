@@ -109,7 +109,7 @@ export const constantRoutes = [
       {
         path: "index",
         name: "add",
-        component: () => import("@/views/addData/index"),
+        component: () => import("@/views/addData/addShops"),
         meta: { title: "添加商铺" },
       },
       {
