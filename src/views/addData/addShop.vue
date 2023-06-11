@@ -1,7 +1,18 @@
 <template>
   <div class="app-container">
-    <div style="border: 1px solid #ccc;margin-bottom: 50px;">
-      上面盒子
+    <div style="border: 1px solid #ccc;margin-bottom: 50px;  padding-left: 33px;" class="iupbox">
+      食品种类
+        <el-select v-model="value" placeholder="请选择"  class="iunp"> 
+    <el-option
+      v-for="item in options"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value">
+    </el-option>
+  </el-select>
+      
+  
+
     </div>
 
      <div style="border: 1px solid #ccc;">
@@ -22,9 +33,7 @@
       <el-form-item label="食品详情" prop="info">
         <el-input v-model="ruleForm.info"></el-input>
       </el-form-item>
-      <el-dialog :visible.sync="dialogVisible">
-        <img width="100%" :src="dialogImageUrl" alt="">
-      </el-dialog>
+      
       <el-form-item label="食品特点" prop="region">
         <el-select v-model="ruleForm.region" placeholder="请选择">
           <el-option label="特点一" value="shanghai"></el-option>
@@ -75,7 +84,26 @@ export default {
         radio: "",
         psf: 1,
         qsj: 20,
+        
       },
+      options: [{
+          value: '选项1',
+          label: '黄金糕'
+        }, {
+          value: '选项2',
+          label: '双皮奶'
+        }, {
+          value: '选项3',
+          label: '蚵仔煎'
+        }, {
+          value: '选项4',
+          label: '龙须面'
+        }, {
+          value: '选项5',
+          label: '北京烤鸭'
+        }],
+        value: '',
+      
       dialogVisible: false,
       dialogImageUrl: "",
       nameRules: [
@@ -107,6 +135,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.iunp{
+  width:600px;
+ padding-top: 20px;
+ 
+}
+.iupbox{
+  height: 100px;
+}
 .app-container {
   width: 800px;
   margin: 0 auto; 
