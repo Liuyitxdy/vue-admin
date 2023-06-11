@@ -109,7 +109,6 @@ export default {
       nameRules: [
         { required: true, message: "请输入商品名称", trigger: "blur" },
       ],
-     
     };
   },
   methods: {
@@ -145,7 +144,7 @@ export default {
 }
 .app-container {
   width: 800px;
-  margin: 0 auto; 
+  margin: 0 auto;
   padding: 20px;
 }
 
@@ -161,7 +160,6 @@ export default {
   content: "*";
   color: red;
 }
-
 
 .top-line {
   height: 3px;
@@ -213,6 +211,4 @@ export default {
 .app-container {
   /* 原有的样式 */
 }
-
-
 </style>
