@@ -31,7 +31,11 @@
             <el-dropdown-item>Docs</el-dropdown-item>
           </a>
           <el-dropdown-item divided @click.native="logout">
-            <span style="display: block">退出</span>
+            <span style="display: block" @click="open2">退出</span>
+            <template>
+          
+  
+                </template>
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -60,6 +64,13 @@ export default {
       await this.$store.dispatch("user/logout");
       this.$router.push(`/login?redirect=${this.$route.fullPath}`);
     },
+    open2() {
+        this.$message({
+          message: '退出成功',
+          type: 'success',
+          duration:1000
+        });
+      },
   },
 };
 </script>
