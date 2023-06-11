@@ -3,7 +3,7 @@
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
 
       <div class="title-container">
-        <h3 class="title">Login Form</h3>
+        <h3 class="title">elm后台管理系统</h3>
       </div>
 
       <el-form-item prop="username">
@@ -41,11 +41,11 @@
         </span>
       </el-form-item>
 
-      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin" @click="open2">Login</el-button>
+      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin" @click="open2">登录</el-button>
 
       <div class="tips">
-        <span style="margin-right:20px;">username: admin</span>
-        <span> password: any</span>
+        <span style="margin-right:20px;text-align: center;display: block;color: red">温馨提示：</span>
+        <p style="text-align: center;color: red">未登录过的新用户，自动注册<br>主册过的用户可凭账号密码登亏</p>
       </div>
 
     </el-form>
@@ -122,13 +122,13 @@ this.$refs.loginForm.validate(valid => {
         }
       })
       },2000)
-      
+
     },
     open2() {
         this.$message({
           message: '登录成功',
           type: 'success',
-         
+
         });
       },
   }
