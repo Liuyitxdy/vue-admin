@@ -5,7 +5,6 @@
 <script>
 import * as echarts from "echarts";
 import http from "@/api/http";
-import { toRaw } from "vue";
 
 export default {
   mounted() {
@@ -19,10 +18,7 @@ export default {
   data() {
     return {
       dates: [],
-      chartData: [],
-      addUsers: [],
-      addOrders: [],
-      addAdmin: [],
+      userDisc: [],
     };
   },
   methods: {
@@ -30,13 +26,9 @@ export default {
       http
         .get("/data.json")
         .then((res) => {
-          this.chartData = res.data.data.dayData;
-          this.addUsers = [];
-          this.chartData.forEach((item) => {
-            this.addUsers.push(item.addUser);
-            this.addOrders.push(item.addOrders);
-            this.addAdmin.push(item.addAdmin);
-          });
+          this.userDisc = res.data.data.userdisc;
+          console.log(this.userDisc);
+          this.updateChart();
         })
         .catch((error) => {
           console.log(error);
@@ -46,53 +38,44 @@ export default {
     },
     updateChart() {
       // 更新图表配置
-      for (let i = 6; i >= 0; i--) {
-        const date = new Date();
-        date.setDate(date.getDate() - i);
-        const year = date.getFullYear();
-        const month = date.getMonth() + 1;
-        const day = date.getDate();
-        this.dates.push(`${year}-${month}-${day}`);
-      }
+
       console.log(this.dates);
       const option = {
+        title: {
+          text: "用户分布",
+          subtext: " ",
+          left: "center",
+        },
+        tooltip: {
+          trigger: "item",
+        },
+        legend: {
+          orient: "vertical",
+          left: "left",
+        },
+        series: [
+          {
+            name: "Access From",
+            type: "pie",
+            radius: "50%",
+            data: this.userDisc.map((item) => {
+              return {
+                value: item.total,
+                name: item.city,
+              };
+            }),
+            emphasis: {
+              itemStyle: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: "rgba(0, 0, 0, 0.5)",
+              },
+            },
+          },
+        ],
+      };
 
-            title: {
-              text: '用户分布',
-              subtext: ' ',
-              left: 'center'
-            },
-            tooltip: {
-              trigger: 'item'
-            },
-            legend: {
-              orient: 'vertical',
-              left: 'left'
-            },
-            series: [
-              {
-                name: 'Access From',
-                type: 'pie',
-                radius: '50%',
-                data: [
-                  { value: 1048, name: '北京' },
-                  { value: 735, name: '上海' },
-                  { value: 580, name: '深圳' },
-                  { value: 484, name: '成都' },
-                  { value: 300, name: '其他' }
-                ],
-                emphasis: {
-                  itemStyle: {
-                    shadowBlur: 10,
-                    shadowOffsetX: 0,
-                    shadowColor: 'rgba(0, 0, 0, 0.5)'
-                  }
-                }
-              }
-            ]
-          };
-
-          this.chart.setOption(option);
+      this.chart.setOption(option);
     },
   },
   beforeDestroy() {

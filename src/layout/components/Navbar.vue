@@ -18,24 +18,10 @@
           <router-link to="/">
             <el-dropdown-item> 首页 </el-dropdown-item>
           </router-link>
-          <a
-            target="_blank"
-            href="https://github.com/PanJiaChen/vue-admin-template/"
-          >
-            <el-dropdown-item></el-dropdown-item>
-          </a>
-          <a
-            target="_blank"
-            href="https://panjiachen.github.io/vue-element-admin-site/#/"
-          >
-            <el-dropdown-item>Docs</el-dropdown-item>
-          </a>
+
           <el-dropdown-item divided @click.native="logout">
             <span style="display: block" @click="open2">退出</span>
-            <template>
-          
-  
-                </template>
+            <template> </template>
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -65,12 +51,12 @@ export default {
       this.$router.push(`/login?redirect=${this.$route.fullPath}`);
     },
     open2() {
-        this.$message({
-          message: '退出成功',
-          type: 'success',
-          duration:1000
-        });
-      },
+      this.$message({
+        message: "退出成功",
+        type: "success",
+        duration: 1000,
+      });
+    },
   },
 };
 </script>

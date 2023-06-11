@@ -872,17 +872,485 @@
       ],
       "foodList": [
          {
-            "foodstuffid": 9850,
-            "foodstuffinName": "大盘",
+            "foodsId": 9850,
+            "foodsnm": "大盘",
             "foodstuffSc": 4.9,
-            "foodstuffSales": 243,
-            "restaurantname": "效果演示",
-            "restaurantjs":"这是一家很好吃的餐厅",
+            "foodsSales": 243,
+            "restauName": "效果演示",
+            "foodsinfo": "这是一家很好吃的餐厅",
             "restaurantid": 1,
-            "restaurantAddress": "广东省xx市xx区xx路xx号",
-            "foodstuffclassify": "热销榜",
-            "foodsp":"新疆大盘鸡"
-         }
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "热销榜",
+            "foodsp": "新疆大盘鸡",
+            "bigprice":0,
+            "price":20,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 2456,
+            "foodsnm": "麻辣香锅",
+            "foodstuffSc": 4.5,
+            "foodsSales": 189,
+            "restauName": "美味香锅",
+            "foodsinfo": "这家餐厅有各种口味的香锅",
+            "restaurantid": 2,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "热销榜",
+            "foodsp": "麻辣香锅",
+            "bigprice":0,
+            "price":20,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 3721,
+            "foodsnm": "蒜蓉蒸扇贝",
+            "foodstuffSc": 4.8,
+            "foodsSales": 215,
+            "restauName": "海鲜餐厅",
+            "foodsinfo": "这里提供新鲜美味的海鲜菜品",
+            "restaurantid": 3,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "推荐菜",
+            "foodsp": "蒜蓉蒸扇贝",
+            "bigprice":0,
+            "price":20,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 6748,
+            "foodsnm": "糖醋排骨",
+            "foodstuffSc": 4.7,
+            "foodsSales": 198,
+            "restauName": "经典小吃",
+            "foodsinfo": "这家小吃摊有各种经典的美食",
+            "restaurantid": 4,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "特色小吃",
+            "foodsp": "糖醋排骨",
+            "bigprice":0,
+            "price":20,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 1985,
+            "foodsnm": "北京烤鸭",
+            "foodstuffSc": 4.9,
+            "foodsSales": 301,
+            "restauName": "北京风味",
+            "foodsinfo": "这家餐厅专门提供正宗的北京烤鸭",
+            "restaurantid": 5,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "特色菜",
+            "foodsp": "北京烤鸭",
+            "bigprice":0,
+            "price":20,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 8724,
+            "foodsnm": "香辣蟹",
+            "foodstuffSc": 4.6,
+            "foodsSales": 176,
+            "restauName": "海鲜风味",
+            "foodsinfo": "这家餐厅以各种海鲜菜品为主打",
+            "restaurantid": 6,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "推荐菜",
+            "foodsp": "香辣蟹",
+            "bigprice":0,
+            "price":20,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 5432,
+            "foodsnm": "水煮鱼",
+            "foodstuffSc": 4.7,
+            "foodsSales": 213,
+            "restauName": "川菜馆",
+            "foodsinfo": "这家餐厅以川菜为主打，口味正宗",
+            "restaurantid": 7,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "特色菜",
+            "foodsp": "水煮鱼",
+            "bigprice":0,
+            "price":20,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 1267,
+            "foodsnm": "红烧肉",
+            "foodstuffSc": 4.8,
+            "foodsSales": 189,
+            "restauName": "家常味道",
+            "foodsinfo": "这家餐厅提供家常菜肴，回味无穷",
+            "restaurantid": 8,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "特色菜",
+            "foodsp": "红烧肉",
+            "bigprice":0,
+            "price":20,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 3698,
+            "foodsnm": "黄焖鸡",
+            "foodstuffSc": 4.6,
+            "foodsSales": 152,
+            "restauName": "快乐餐厅",
+            "foodsinfo": "这家餐厅提供各种美味的快餐",
+            "restaurantid": 9,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "快餐推荐",
+            "foodsp": "黄焖鸡",
+            "bigprice":0,
+            "price":20,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 2715,
+            "foodsnm": "冰淇淋",
+            "foodstuffSc": 4.7,
+            "foodsSales": 236,
+            "restauName": "甜品屋",
+            "foodsinfo": "这家甜品屋提供各种口味的冰淇淋",
+            "restaurantid": 10,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "甜品推荐",
+            "foodsp": "冰淇淋",
+            "bigprice":0,
+            "price":20,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 4387,
+            "foodsnm": "牛肉面",
+            "foodstuffSc": 4.5,
+            "foodsSales": 128,
+            "restauName": "面馆",
+            "foodsinfo": "这家面馆以各种面食为特色",
+            "restaurantid": 11,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "特色面食",
+            "foodsp": "牛肉面",
+            "bigprice":0,
+            "price":20,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 1923,
+            "foodsnm": "酸辣粉",
+            "foodstuffSc": 4.4,
+            "foodsSales": 96,
+            "restauName": "小吃摊",
+            "foodsinfo": "这个小吃摊以各种小吃为卖点",
+            "restaurantid": 12,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "小吃推荐",
+            "foodsp": "酸辣粉",
+            "bigprice":0,
+            "price":17,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 5092,
+            "foodsnm": "烧烤串",
+            "foodstuffSc": 4.6,
+            "foodsSales": 175,
+            "restauName": "夜市摊位",
+            "foodsinfo": "这个摊位提供各种美味的烧烤串",
+            "restaurantid": 13,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "夜市推荐",
+            "foodsp": "烧烤串",
+            "bigprice":0,
+            "price":17,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 7365,
+            "foodsnm": "炸鸡翅",
+            "foodstuffSc": 4.7,
+            "foodsSales": 203,
+            "restauName": "小吃店",
+            "foodsinfo": "这家小吃店以各种小吃为特色",
+            "restaurantid": 14,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "小吃推荐",
+            "foodsp": "炸鸡翅",
+            "bigprice":0,
+            "price":17,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 9182,
+            "foodsnm": "豆浆油条",
+            "foodstuffSc": 4.5,
+            "foodsSales": 132,
+            "restauName": "早餐店",
+            "foodsinfo": "这家早餐店提供各种早餐美食",
+            "restaurantid": 15,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "早餐推荐",
+            "foodsp": "豆浆油条",
+            "bigprice":0,
+            "price":17,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 3652,
+            "foodsnm": "蛋炒饭",
+            "foodstuffSc": 4.4,
+            "foodsSales": 97,
+            "restauName": "快餐店",
+            "foodsinfo": "这家快餐店提供各种快餐美食",
+            "restaurantid": 16,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "快餐推荐",
+            "foodsp": "蛋炒饭",
+            "bigprice":0,
+            "price":17,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 5294,
+            "foodsnm": "葱油饼",
+            "foodstuffSc": 4.6,
+            "foodsSales": 163,
+            "restauName": "小吃摊",
+            "foodsinfo": "这个小吃摊以各种小吃为卖点",
+            "restaurantid": 17,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "小吃推荐",
+            "foodsp": "葱油饼",
+            "bigprice":0,
+            "price":17,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 6281,
+            "foodsnm": "蒸排骨",
+            "foodstuffSc": 4.7,
+            "foodsSales": 192,
+            "restauName": "家常菜",
+            "foodsinfo": "这家餐厅提供各种家常菜肴",
+            "restaurantid": 18,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "特色菜",
+            "foodsp": "蒸排骨",
+            "bigprice":0,
+            "price":17,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 1347,
+            "foodsnm": "麻辣烫",
+            "foodstuffSc": 4.5,
+            "foodsSales": 144,
+            "restauName": "小火锅",
+            "foodsinfo": "这家小火锅店提供各种口味的麻辣烫",
+            "restaurantid": 19,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "小吃推荐",
+            "foodsp": "麻辣烫",
+            "bigprice":0,
+            "price":17,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 2764,
+            "foodsnm": "豆腐脑",
+            "foodstuffSc": 4.7,
+            "foodsSales": 189,
+            "restauName": "早餐店",
+            "foodsinfo": "这家早餐店以各种早餐美食为主打",
+            "restaurantid": 20,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "早餐推荐",
+            "foodsp": "豆腐脑",
+            "bigprice":0,
+            "price":17,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 7593,
+            "foodsnm": "奶茶",
+            "foodstuffSc": 4.6,
+            "foodsSales": 216,
+            "restauName": "饮品店",
+            "foodsinfo": "这家饮品店提供各种口味的奶茶",
+            "restaurantid": 21,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "饮品推荐",
+            "foodsp": "奶茶",
+            "bigprice":7,
+            "price":12,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 9402,
+            "foodsnm": "炸酱面",
+            "foodstuffSc": 4.5,
+            "foodsSales": 179,
+            "restauName": "面馆",
+            "foodsinfo": "这家面馆以各种面食为特色",
+            "restaurantid": 22,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "特色面食",
+            "foodsp": "炸酱面",
+            "bigprice":6,
+            "price":3,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 5218,
+            "foodsnm": "煎饼果子",
+            "foodstuffSc": 4.6,
+            "foodsSales": 154,
+            "restauName": "小吃摊",
+            "foodsinfo": "这个小吃摊以各种小吃为卖点",
+            "restaurantid": 23,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "小吃推荐",
+            "foodsp": "煎饼果子",
+            "bigprice":7,
+            "price":17,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 6127,
+            "foodsnm": "蚂蚁上树",
+            "foodstuffSc": 4.7,
+            "foodsSales": 201,
+            "restauName": "川菜馆",
+            "foodsinfo": "这家川菜馆以川菜为主打，口味正宗",
+            "restaurantid": 24,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "特色菜",
+            "foodsp": "蚂蚁上树",
+            "bigprice":3,
+            "price":12,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 1483,
+            "foodsnm": "酸菜鱼",
+            "foodstuffSc": 4.8,
+            "foodsSales": 209,
+            "restauName": "川味风情",
+            "foodsinfo": "这家餐厅提供正宗的川菜美食",
+            "restaurantid": 25,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "特色菜",
+            "foodsp": "酸菜鱼",
+            "bigprice":6,
+            "price":19,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 2945,
+            "foodsnm": "炸虾球",
+            "foodstuffSc": 4.7,
+            "foodsSales": 192,
+            "restauName": "海鲜餐厅",
+            "foodsinfo": "这里提供新鲜美味的海鲜菜品",
+            "restaurantid": 26,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "推荐菜",
+            "foodsp": "炸虾球",
+            "bigprice":5,
+            "price":25,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 7864,
+            "foodsnm": "烤肉拌饭",
+            "foodstuffSc": 4.6,
+            "foodsSales": 173,
+            "restauName": "韩国料理",
+            "foodsinfo": "这家餐厅提供正宗的韩国美食",
+            "restaurantid": 27,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "特色菜",
+            "foodsp": "烤肉拌饭",
+            "bigprice":2,
+            "price":5,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 9821,
+            "foodsnm": "手抓饼",
+            "foodstuffSc": 4.5,
+            "foodsSales": 157,
+            "restauName": "小吃摊",
+            "foodsinfo": "这个小吃摊以各种小吃为卖点",
+            "restaurantid": 28,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "小吃推荐",
+            "foodsp": "手抓饼",
+            "bigprice":0,
+            "price":14,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 7532,
+            "foodsnm": "糖醋排骨",
+            "foodstuffSc": 4.7,
+            "foodsSales": 198,
+            "restauName": "家常味道",
+            "foodsinfo": "这家餐厅提供家常菜肴，回味无穷",
+            "restaurantid": 29,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "特色菜",
+            "foodsp": "糖醋排骨",
+            "bigprice":0,
+            "price":19,
+            "gg":"默认"
+          },
+          
+          {
+            "foodsId": 6194,
+            "foodsnm": "炸鱼薯条",
+            "foodstuffSc": 4.6,
+            "foodsSales": 162,
+            "restauName": "快乐餐厅",
+            "foodsinfo": "这家餐厅提供各种美味的快餐",
+            "restaurantid": 30,
+            "restaAdd": "广东省xx市xx区xx路xx号",
+            "foodclassify": "快餐推荐",
+            "foodsp": "炸鱼薯条",
+            "bigprice":0,
+            "price":12,
+            "gg":"默认"
+          }
+          
       ],
       "ordersList": [
          {
@@ -896,12 +1364,13 @@
             "shopid": 3284
          }
       ],
-      "adminiList": [
+      "adminList": [
          {
-            "administratorName": "毛蛋",
-            "dateOfRegistration": "2023-06-23 14：53",
-            "administratorAddress": "成都",
-            "might": "管理员"
+            "adminName": "毛蛋",
+            "adminReg": "2023-06-23 14：53",
+            "adminAdd": "成都",
+            "might": "管理员",
+            "id":154
          }
       ],
       "userdisc":[
