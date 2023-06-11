@@ -41,7 +41,7 @@
         </span>
       </el-form-item>
 
-      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">Login</el-button>
+      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin" @click="open2">Login</el-button>
 
       <div class="tips">
         <span style="margin-right:20px;">username: admin</span>
@@ -106,7 +106,8 @@ export default {
       })
     },
     handleLogin() {
-      this.$refs.loginForm.validate(valid => {
+      setTimeout(()=>{
+this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true
           this.$store.dispatch('user/login', this.loginForm).then(() => {
@@ -120,7 +121,16 @@ export default {
           return false
         }
       })
-    }
+      },2000)
+      
+    },
+    open2() {
+        this.$message({
+          message: '登录成功',
+          type: 'success',
+         
+        });
+      },
   }
 }
 </script>
