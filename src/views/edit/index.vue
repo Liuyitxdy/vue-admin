@@ -73,8 +73,8 @@ export default {
 </script>
 <style>
 .btn{
-  margin-top: 80px;
-  margin-left: 600px;
+  margin-top: 100px;
+  margin-left: 800px;
   background-color: #20a0ff;
   color: #ffffff;
 }
