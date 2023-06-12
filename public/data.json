@@ -1,28 +1,7 @@
 {
    "status": true,
    "data": {
-      "admin":[
-         {
-            "username":"admin",
-            "password":"adminn"
-         },
-         {
-            "username":"zdf",
-            "password":"zdfzdf"
-         },
-         {
-            "username":"zmq",
-            "password":"zmqzmq"
-         },
-         {
-            "username":"zmj",
-            "password":"zmjzmj"
-         },
-         {
-            "username":"wy",
-            "password":"wywywy"
-         }
-      ],
+      
       "dayData":[
          {
             "id": 1,
