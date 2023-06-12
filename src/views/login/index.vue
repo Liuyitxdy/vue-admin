@@ -139,9 +139,11 @@ export default {
         this.$refs.loginForm.validate((valid) => {
           if (valid) {
             this.loading = true;
+
             this.$store
               .dispatch("user/login", this.loginForm)
               .then(() => {
+                this.$message.success("登录成功")
                 this.$router.push({ path: this.redirect || "/" });
                 this.loading = false;
               })
@@ -155,15 +157,7 @@ export default {
         });
       }, 2000);
     },
-    open2() {
-      http.get("/data.json").then((res) => {
-        console.log(res.data.data.admin);
-      });
-      this.$message({
-        message: "登录成功",
-        type: "success",
-      });
-    },
+
   },
 };
 </script>
