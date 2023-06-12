@@ -92,8 +92,10 @@ export default {
         radio: "",
         psf: 1,
         qsj: 20,
+
         
-      },
+      },activeName:"",
+      rules:{},
       options: [{
           value: '选项1',
           label: '黄金糕'

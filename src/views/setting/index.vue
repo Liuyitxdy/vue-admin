@@ -12,7 +12,7 @@
         <div>权限：{{ item.might }}</div>
       </div>
       <div class="text item">更换头像</div>
-      <el-upload class="upload-button">
+      <el-upload class="upload-button" action="/upload" :show-file-list="false">
         <i class="el-icon-plus"></i>
         <div class="el-upload__text">点击上传图片</div>
       </el-upload>
@@ -22,6 +22,7 @@
 
 <script>
 import http from "@/api/http.js";
+
 export default {
   data() {
     return {
@@ -32,10 +33,13 @@ export default {
     http.get("/data.json").then((res) => {
       console.log(res.data.data.adminList);
       this.admin = res.data.data.adminList;
+    }).catch((error) => {
+      console.error(error);
     });
   },
 };
 </script>
+
 <style>
 .center-container {
   display: flex;
@@ -53,7 +57,7 @@ export default {
 }
 
 .box-card {
-  width: 900px; /* Increased width */
+  width: 900px;
   position: relative;
 }
 
