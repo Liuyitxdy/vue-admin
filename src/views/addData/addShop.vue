@@ -60,7 +60,7 @@
       </el-form-item>
     </el-form>
      </div>
-    
+
   </div>
 </template>
 
@@ -81,7 +81,7 @@ export default {
       nameRules: [
         { required: true, message: "请输入商品名称", trigger: "blur" },
       ],
-     
+
     };
   },
   methods: {
@@ -109,7 +109,7 @@ export default {
 <style lang="scss" scoped>
 .app-container {
   width: 800px;
-  margin: 0 auto; 
+  margin: 0 auto;
   padding: 20px;
 }
 
