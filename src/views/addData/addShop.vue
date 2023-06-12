@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <div style="border: 1px solid #ccc;margin-bottom: 50px;  padding-left: 33px;" class="iupbox">
+    <div style="border: 1px solid #ccc;  padding-left: 33px;" class="iupbox">
       食品种类
         <el-select v-model="value" placeholder="请选择"  class="iunp"> 
     <el-option
@@ -9,11 +9,19 @@
       :label="item.label"
       :value="item.value">
     </el-option>
+    
   </el-select>
-      
-  
-
     </div>
+
+ <el-collapse v-model="activeName" accordion class="foodxz">
+  <el-collapse-item title="添加食品种类" name="1" style=" margin-left: 340px;">
+    <div>牛</div>
+    <div>猪</div>
+    <div>马</div>
+  </el-collapse-item>
+ 
+</el-collapse>
+
 
      <div style="border: 1px solid #ccc;">
       <h3 class="tianjiasp">添加商品</h3>
@@ -134,6 +142,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.foodxz{
+  margin-bottom: 50px;
+  border: 1px solid #ccc;
+  
+ 
+}
 .iunp{
   width:600px;
  padding-top: 20px;
