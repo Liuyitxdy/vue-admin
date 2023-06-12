@@ -31,7 +31,7 @@
           </el-form>
         </template>
       </el-table-column>
-      <el-table-column label="商品名称" prop="shopName"></el-table-column>
+      <el-table-column label="店铺名称" prop="shopName"></el-table-column>
       <el-table-column label="店铺地址" prop="shopAddress"> </el-table-column>
       <el-table-column label="店铺介绍" prop="shopIntroduce"> </el-table-column>
       <el-table-column label="操作" prop="desc">
@@ -176,6 +176,7 @@ export default {
     handleEdit(index, row) {
       console.log(index, row);
       this.dialogTableVisible = true;
+      this.$router.push("/addData/addShop")
     },
   },
 };
