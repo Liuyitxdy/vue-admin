@@ -24,12 +24,16 @@
         align="center"
       ></el-table-column>
     </el-table>
-    <pagination
-      :current-page.sync="currentPage1"
-      :total="totalItems"
-      :page-size="pageSize"
-      @page-change="handlePageChange"
-    ></pagination>
+    <div class="pagination-container">
+      <span class="pagination-info">共 {{ totalItems }} 条</span>
+      <pagination
+        :current-page.sync="currentPage1"
+        :total="totalItems"
+        :page-size="pageSize"
+        @page-change="handlePageChange"
+        class="kongzhi"
+      ></pagination>
+    </div>
   </div>
 </template>
 
@@ -63,7 +67,6 @@ export default {
     },
     fetchData() {
       http.get("/data.json").then((res) => {
-        console.log(res.data.data.userList);
         this.userList = res.data.data.userList;
         this.totalItems = this.userList.length;
       });
@@ -76,7 +79,18 @@ export default {
 </script>
 
 <style>
-.text-container {
-  margin-right: 10px;
+.pagination-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.pagination-info {
+  margin-right: 5px;
+}
+
+.kongzhi {
+  margin-left: 2px;
 }
 </style>
