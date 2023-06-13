@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="home">
-      <div style="width: 1200px;margin: 0 auto;margin-top: 50px">
+      <div style="width: 900px;margin: 0 auto;margin-top: 50px">
 
         <mavon-editor :codeStyle="codeStyle" :toolbars="toolbars" v-model="content" :ishljs="true" ref="md" @change="change"/>
 
@@ -78,7 +78,7 @@ export default {
 <style>
 .btn{
   margin-top: 100px;
-  margin-left: 800px;
+  margin-left: 680px;
   background-color: #20a0ff;
   color: #ffffff;
 }
