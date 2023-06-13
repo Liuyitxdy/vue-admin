@@ -1,6 +1,11 @@
 <template>
   <div class="app-container">
-    <el-table :data="displayedBusinessList" style="width: 100%">
+    <el-table
+      :data="displayedBusinessList"
+      style="width: 100%"
+      :header-cell-style="{ background: '#f4f3f9', color: '#606266' }"
+      :border="true"
+    >
       <el-table-column type="expand">
         <template slot-scope="props">
           <el-form label-position="left" inline class="demo-table-expand">
@@ -31,9 +36,15 @@
           </el-form>
         </template>
       </el-table-column>
-      <el-table-column label="商品名称" prop="shopName"></el-table-column>
-      <el-table-column label="店铺地址" prop="shopAddress"> </el-table-column>
-      <el-table-column label="店铺介绍" prop="shopIntroduce"> </el-table-column>
+      <el-table-column
+        label="店铺名称"
+        prop="shopName"
+        align="center"
+      ></el-table-column>
+      <el-table-column label="店铺地址" prop="shopAddress" align="center">
+      </el-table-column>
+      <el-table-column label="店铺介绍" prop="shopIntroduce" align="center">
+      </el-table-column>
       <el-table-column label="操作" prop="desc">
         <template slot-scope="scope">
           <el-button
@@ -131,6 +142,12 @@ export default {
     },
   },
   mounted() {
+    const shopData = localStorage.getItem("shopData");
+    if (shopData) {
+      this.businessList.push(JSON.parse(shopData));
+      this.totalItems++;
+    }
+
     this.fetchData();
   },
   methods: {
@@ -164,6 +181,8 @@ export default {
     fetchData() {
       http.get("/data.json").then((res) => {
         this.businessList = res.data.data.busList;
+        const shopData = JSON.parse(localStorage.getItem("shopData")) || [];
+        this.businessList = shopData;
         // 把数据给form
         this.form = this.businessList;
         this.totalItems = this.businessList.length;
@@ -172,10 +191,15 @@ export default {
     handleDelete(index, row) {
       console.log(index, row);
       this.businessList.splice(index, 1);
+      this.totalItems--;
+      if (this.currentPage > Math.ceil(this.totalItems / this.pageSize)) {
+        this.currentPage--;
+      }
     },
     handleEdit(index, row) {
       console.log(index, row);
       this.dialogTableVisible = true;
+      this.$router.push("/addData/addShop");
     },
   },
 };

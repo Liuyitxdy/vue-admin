@@ -133,17 +133,28 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
+          // 创建成功后将数据添加到本地缓存中
+          const shopData = {
+            shopName: this.ruleForm.name,
+            shopAddress: this.ruleForm.address,
+            shopIntroduce: this.ruleForm.info,
+            shopPhone: this.ruleForm.phone,
+            shopClassify: this.ruleForm.region,
+            shopImage: "",
+          };
+          localStorage.setItem("shopData", JSON.stringify(shopData));
           this.$message({
             message: "创建成功",
             type: "success",
           });
-          this.$router.go(0);
+          this.$router.push("/mange/shop");
         } else {
           console.log("error submit!!");
           return false;
         }
       });
     },
+
     resetForm(formName) {
       this.$refs[formName].resetFields();
     },
