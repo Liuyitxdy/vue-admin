@@ -13,7 +13,8 @@
 
         </el-form-item>
         <el-form-item class="arrow">
-          <el-button type="primary" @click="submitForm('ruleForm')" class="arrow">登录</el-button>
+          <!-- <el-button type="primary" @click="submitForm('ruleForm')" class="arrow">登录</el-button> -->
+          <el-button plain  class="arrow" type="primary" @click="submitForm('ruleForm')">登录</el-button>
         </el-form-item>
         <p style="text-align: center;color: red;font-size: 12px;margin: 0">温馨提示：</p>
         <P style="text-align: center;color: red;font-size: 9px;margin: 0">未登录过的新用户，自动注册<br>主册过的用户可凭账号密码登亏</P>
@@ -44,6 +45,11 @@ export default {
     var validatePass = (rule, value, callback) => {
       if (value === '') {
         callback(new Error('请输入用户名'));
+        this.$notify.error({
+          title: '错误',
+          message: '请输入用户名',
+         
+        });
       } else {
         if (this.ruleForm.checkPass !== '') {
           this.$refs.ruleForm.validateField('checkPass');
@@ -54,6 +60,11 @@ export default {
     var validatePass2 = (rule, value, callback) => {
       if (value === '') {
         callback(new Error('请输入密码'));
+        this.$notify.error({
+          title: '错误',
+          message: '请输入密码',
+          
+        });
       }else {
         callback();
       }
@@ -89,6 +100,16 @@ export default {
           return false;
         }
       });
+      // if(pass === ''){
+      //   this.$notify({
+      //     title: '成功',
+      //     message: '这是一条成功的提示消息',
+      //     type: 'success'
+      //   });
+      // }else{
+      //   return
+      // }
+       
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();
