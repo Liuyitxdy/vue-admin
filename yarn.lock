@@ -3245,11 +3245,7 @@
 
 "commander@^2.20.3":
   "integrity" "sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ=="
-<<<<<<< HEAD
   "resolved" "https://registry.npmmirror.com/commander/-/commander-2.20.3.tgz"
-=======
-  "resolved" "https://registry.npmjs.org/commander/-/commander-2.20.3.tgz"
->>>>>>> d16cefd25e3b6797605a28c98fa9b96e0347d28e
   "version" "2.20.3"
 
 "commander@~2.19.0":
@@ -3633,11 +3629,7 @@
 
 "cssfilter@0.0.10":
   "integrity" "sha512-FAaLDaplstoRsDR8XGYH51znUN0UY7nMc6Z9/fvE8EXGwvJE9hu7W2vHwx1+bd6gCYnln9nLbzxFTrcO9YQDZw=="
-<<<<<<< HEAD
   "resolved" "https://registry.npmmirror.com/cssfilter/-/cssfilter-0.0.10.tgz"
-=======
-  "resolved" "https://registry.npmjs.org/cssfilter/-/cssfilter-0.0.10.tgz"
->>>>>>> d16cefd25e3b6797605a28c98fa9b96e0347d28e
   "version" "0.0.10"
 
 "cssnano-preset-default@^4.0.0", "cssnano-preset-default@^4.0.8":
@@ -7269,11 +7261,7 @@
 
 "mavon-editor@^2.10.4":
   "integrity" "sha512-CFsBLkgt/KZBDg+SJYe2fyYv4zClY149PiwpH0rDAiiP4ae1XNs0GC8nBsoTeipsHcebDLN1QMkt3bUsnMDjQw=="
-<<<<<<< HEAD
   "resolved" "https://registry.npmmirror.com/mavon-editor/-/mavon-editor-2.10.4.tgz"
-=======
-  "resolved" "https://registry.npmjs.org/mavon-editor/-/mavon-editor-2.10.4.tgz"
->>>>>>> d16cefd25e3b6797605a28c98fa9b96e0347d28e
   "version" "2.10.4"
   dependencies:
     "xss" "^1.0.6"
@@ -11242,7 +11230,7 @@
 
 "webpack@^1.0.0 || ^2.0.0 || ^3.0.0 || ^4.0.0", "webpack@^2.0.0 || ^3.0.0 || ^4.0.0", "webpack@^3.0.0 || ^4.1.0 || ^5.0.0-0", "webpack@^4.0.0", "webpack@^4.0.0 || ^5.0.0", "webpack@^4.36.0 || ^5.0.0", "webpack@^4.4.0", "webpack@>=2", "webpack@>=2.0.0 <5.0.0", "webpack@>=4.0.0":
   "integrity" "sha512-6jJuJjg8znb/xRItk7bkT0+Q7AHCYjjFnvKIWQPkNIOyRqoCGvkOs0ipeQzrqz4l5FtN5ZI/ukEHroeX/o1/5Q=="
-  "resolved" "https://registry.npmjs.org/webpack/-/webpack-4.46.0.tgz"
+  "resolved" "https://registry.npmmirror.com/webpack/-/webpack-4.46.0.tgz"
   "version" "4.46.0"
   dependencies:
     "@webassemblyjs/ast" "1.9.0"
@@ -11441,11 +11429,7 @@
 
 "xss@^1.0.6":
   "integrity" "sha512-og7TEJhXvn1a7kzZGQ7ETjdQVS2UfZyTlsEdDOqvQF7GoxNfY+0YLCzBy1kPdsDDx4QuNAonQPddpsn6Xl/7sw=="
-<<<<<<< HEAD
   "resolved" "https://registry.npmmirror.com/xss/-/xss-1.0.14.tgz"
-=======
-  "resolved" "https://registry.npmjs.org/xss/-/xss-1.0.14.tgz"
->>>>>>> d16cefd25e3b6797605a28c98fa9b96e0347d28e
   "version" "1.0.14"
   dependencies:
     "commander" "^2.20.3"
