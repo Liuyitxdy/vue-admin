@@ -1,18 +1,16 @@
 <template>
   <div>
     <div class="home">
-      <div style="width: 1200px; margin: 0 auto; margin-top: 50px">
-        <mavon-editor
-          :codeStyle="codeStyle"
-          :toolbars="toolbars"
-          v-model="content"
-          :ishljs="true"
-          ref="md"
-          @change="change"
-        />
+      <div style="width:90%;margin: 0 auto;margin-top: 50px">
+
+        <mavon-editor :codeStyle="codeStyle" :toolbars="toolbars" v-model.trim="content" :ishljs="true" ref="md" @change="change"/>
+
       </div>
     </div>
-    <el-button @click="outputENter" class="btn">提交</el-button>
+    <div class="btnbox">
+<el-button @click="outputENter" class="btn">提交</el-button>
+    </div>
+      
   </div>
 </template>
 
@@ -20,10 +18,10 @@
 export default {
   data() {
     return {
-      content: " ",
-      page_article: undefined,
-      html_content: undefined,
-      md_content: undefined,
+      content: "",
+      page_article:undefined,
+      html_content:undefined,
+      md_content:undefined,
       toolbars: {
         bold: true, // 粗体
         italic: true, // 斜体
@@ -59,10 +57,14 @@ export default {
       test_html: undefined,
     };
   },
-  methods: {
-    outputENter() {
-      this.$message.success("提交成功");
-      this.$router.go(0);
+  methods:{
+    outputENter(){
+    if(this.content != ''){
+        this.$message.success('提交成功')
+      this.$router.go(0)
+    }else{
+      this.$message.error("请输入文字")
+    }
     },
     change(value, render) {
       // render 为 markdown 解析后的结果
@@ -72,9 +74,14 @@ export default {
 };
 </script>
 <style>
-.btn {
-  margin-top: 100px;
-  margin-left: 800px;
+.btnbox{
+  
+  margin: 0 auto;
+  width: 100px;
+}
+.btn{
+  margin-top: 50px;
+  text-align: center;
   background-color: #20a0ff;
   color: #ffffff;
 }

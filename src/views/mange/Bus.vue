@@ -163,8 +163,8 @@ export default {
     },
   },
   mounted() {
-    this.localStorageData = JSON.parse(localStorage.getItem("shopData"));
-    console.log(this.localStorageData);
+    // this.localStorageData = JSON.parse(localStorage.getItem("shopData"));
+    // console.log(this.localStorageData);
     this.fetchData();
   },
   methods: {
@@ -200,8 +200,16 @@ export default {
         this.businessList = res.data.data.busList;
         this.form = this.businessList;
         this.totalItems = this.businessList.length;
+
+        this.localStorageData = JSON.parse(localStorage.getItem("shopData"));
+
+        // 合并数组对象
+        let arr = [this.localStorageData, ...this.businessList];
+        console.log(arr);
+        this.businessList = arr;
       });
     },
+
     handleDelete(index, row) {
       console.log(index, row);
       this.businessList.splice(index, 1);
