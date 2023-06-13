@@ -1,7 +1,8 @@
 <template>
   <div>
     <!-- 管理员 -->
-    <el-table :data="adminList" style="width: 100%">
+    <el-table :data="adminList" style="width: 100%" :header-cell-style="{ background: '#f4f3f9', color: '#606266' }"
+      :border="true">
       <el-table-column prop="id" label="id" width="180" class=".txa">
       </el-table-column>
       <el-table-column prop="adminName" label="姓名" width="180" class=".txa">

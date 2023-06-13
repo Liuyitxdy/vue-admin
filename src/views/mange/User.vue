@@ -1,6 +1,8 @@
 <template>
   <div>
-    <el-table :data="displayedUserList" style="width: 100%">
+    <el-table :data="displayedUserList" style="width: 100%"
+    :header-cell-style="{ background: '#f4f3f9', color: '#606266' }"
+      :border="true">
       <el-table-column
         prop="id"
         label="#"
