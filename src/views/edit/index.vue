@@ -3,7 +3,7 @@
     <div class="home">
       <div style="width:90%;margin: 0 auto;margin-top: 50px">
 
-        <mavon-editor :codeStyle="codeStyle" :toolbars="toolbars" v-model="content" :ishljs="true" ref="md" @change="change"/>
+        <mavon-editor :codeStyle="codeStyle" :toolbars="toolbars" v-model.trim="content" :ishljs="true" ref="md" @change="change"/>
 
       </div>
     </div>
