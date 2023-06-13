@@ -1,8 +1,15 @@
 <template>
-  <div class="home">
-    <mavon-editor :codeStyle="codeStyle" :toolbars="toolbars" v-model="content" :ishljs="true" ref="md" @change="change"/>
-    <el-button @click="outputENter" class="btn">提交</el-button>
+  <div>
+    <div class="home">
+      <div style="width: 1200px;margin: 0 auto;margin-top: 50px">
+
+        <mavon-editor :codeStyle="codeStyle" :toolbars="toolbars" v-model="content" :ishljs="true" ref="md" @change="change"/>
+
+      </div>
+    </div>
+      <el-button @click="outputENter" class="btn">提交</el-button>
   </div>
+
 </template>
 
 <script>
@@ -50,9 +57,6 @@ export default {
   },
   methods:{
     outputENter(){
-      // console.log(JSON.stringify(this.content))
-      // console.log(this.$refs.md.d_render)
-      // console.log(this.$refs.md.d_value)
       console.log(JSON.stringify(this.test_html))   //就用这个存数据库  然后进行回显即可
       this.$axios.post("http://127.0.0.1:3009",{
         params:{
@@ -77,6 +81,14 @@ export default {
   margin-left: 800px;
   background-color: #20a0ff;
   color: #ffffff;
+}
+.home{
+
+  width: 75%;
+  border: 1px #ccc solid;
+  box-shadow: 5px 5px #cccccc;
+  height: 390px;
+  margin: 0 auto;
 }
 </style>
 
