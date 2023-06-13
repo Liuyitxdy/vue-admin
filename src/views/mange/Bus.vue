@@ -163,9 +163,8 @@ export default {
     },
   },
   mounted() {
-    console.log(localStorage.getItem("shopData"));
     this.localStorageData = JSON.parse(localStorage.getItem("shopData"));
-
+    console.log(this.localStorageData);
     this.fetchData();
   },
   methods: {

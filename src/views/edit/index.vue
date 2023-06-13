@@ -12,7 +12,6 @@
     </div>
       
   </div>
-
 </template>
 
 <script>
@@ -52,10 +51,10 @@ export default {
         aligncenter: true, // 居中
         alignright: true, // 右对齐
         subfield: true, // 单双栏模式
-        preview: true // 预览
+        preview: true, // 预览
       },
-      codeStyle:'monokai-sublime',//主题
-      test_html:undefined
+      codeStyle: "monokai-sublime", //主题
+      test_html: undefined,
     };
   },
   methods:{
@@ -67,11 +66,11 @@ export default {
       this.$message.error("请输入文字")
     }
     },
-    change(value, render){
+    change(value, render) {
       // render 为 markdown 解析后的结果
       this.test_html = render;
-    }
-  }
+    },
+  },
 };
 </script>
 <style>
@@ -86,8 +85,7 @@ export default {
   background-color: #20a0ff;
   color: #ffffff;
 }
-.home{
-
+.home {
   width: 75%;
   border: 1px #ccc solid;
   box-shadow: 5px 5px #cccccc;
@@ -95,4 +93,3 @@ export default {
   margin: 0 auto;
 }
 </style>
-
