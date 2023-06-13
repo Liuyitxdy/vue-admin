@@ -8,21 +8,21 @@
       class="demo-ruleForm"
     >
       <el-form-item label="店铺名称" prop="name">
-        <el-input v-model="ruleForm.name"></el-input>
+        <el-input v-model="ruleForm.name" maxlength="5"minlength="3"></el-input>
       </el-form-item>
       <el-form-item label="详细地址" prop="address">
-        <el-input v-model="ruleForm.address"></el-input>
+        <el-input v-model="ruleForm.address" maxlength="20"></el-input>
         <div>当前城市：{{ ruleForm.nowCity }}</div>
       </el-form-item>
 
       <el-form-item label="联系电话" prop="phone">
-        <el-input v-model="ruleForm.phone"></el-input>
+        <el-input v-model="ruleForm.phone" maxlength="11" minLength="11"></el-input>
       </el-form-item>
       <el-form-item label="店铺简介" prop="info">
-        <el-input v-model="ruleForm.info"></el-input>
+        <el-input v-model="ruleForm.info" maxlength="30"></el-input>
       </el-form-item>
       <el-form-item label="店铺标语" prop="by">
-        <el-input v-model="ruleForm.by"></el-input>
+        <el-input v-model="ruleForm.by" maxlength="15"></el-input>
       </el-form-item>
       <el-form-item label="店铺分类" prop="region">
         <el-select v-model="ruleForm.region" placeholder="快餐便当/简餐">
