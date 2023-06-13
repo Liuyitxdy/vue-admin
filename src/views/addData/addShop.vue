@@ -5,9 +5,9 @@
       <el-select v-model="value" placeholder="请选择" class="iunp">
         <el-option
           v-for="item in options"
-          :key="item.value"
+          :key="item.name"
           :label="item.label"
-          :value="item.value"
+          :value="item.info"
         >
         </el-option>
       </el-select>
@@ -15,20 +15,28 @@
 
     <el-collapse v-model="activeName" accordion class="foodxz">
       <el-collapse-item title="添加食品种类" name="1" class="addFood">
-        <div class="radio-el">
-          <el-radio
-            :label="index"
-            border
-            disabled
-            v-for="(item, index) in options"
-            :key="index"
-            >{{ item.label }}</el-radio
+        <div class="collForm">
+          <el-form
+            :label-position="labelPosition"
+            label-width="80px"
+            :model="Lb"
           >
+            <el-form-item label="种类概况">
+              <el-input v-model="Lb.name"></el-input>
+            </el-form-item>
+            <el-form-item label="种类名称">
+              <el-input v-model="Lb.info"></el-input>
+            </el-form-item>
+            <el-form-item>
+              <el-button type="primary" @click="submitLb">立即创建</el-button>
+              <el-button @click="resetForm('ruleForm')">重置</el-button>
+            </el-form-item>
+          </el-form>
         </div>
       </el-collapse-item>
     </el-collapse>
 
-    <div style="border: 1px solid #ccc">
+    <div style="border: 1px solid #ccc; padding: 15px">
       <h3 class="tianjiasp">添加商品</h3>
       <el-form
         :model="ruleForm"
@@ -59,22 +67,52 @@
             <el-radio :label="2">多规格</el-radio>
           </el-radio-group>
         </el-form-item>
-        <el-form-item label="包装费" prop="psf">
-          <el-input-number
-            v-model="ruleForm.psf"
-            @change="handleChange"
-            :min="1"
-            label="包装费"
-          ></el-input-number>
-        </el-form-item>
-        <el-form-item label="价格" prop="qsj">
-          <el-input-number
-            v-model="ruleForm.qsj"
-            @change="handleChange"
-            :min="1"
-            label="价格"
-          ></el-input-number>
-        </el-form-item>
+        <div v-show="ruleForm.radio == 1">
+          <el-form-item label="包装费" prop="psf">
+            <el-input-number
+              v-model="ruleForm.psf"
+              @change="handleChange"
+              :min="1"
+              label="包装费"
+            ></el-input-number>
+          </el-form-item>
+          <el-form-item label="价格" prop="qsj">
+            <el-input-number
+              v-model="ruleForm.qsj"
+              @change="handleChange"
+              :min="1"
+              label="价格"
+            ></el-input-number>
+          </el-form-item>
+        </div>
+        <div v-show="ruleForm.radio == 2">
+          <el-form :model="formGg">
+            <el-form-item label="规格" :label-width="formLabelWidth" required>
+              <el-input
+                v-model="formGg.name"
+                autocomplete="off"
+                maxlength="3"
+                style="width: 28%"
+              ></el-input>
+            </el-form-item>
+            <el-form-item label="包装费" :label-width="formLabelWidth">
+              <el-input-number
+                v-model="Bprice"
+                @change="Bigprice"
+                :min="0"
+                label="包装费"
+              ></el-input-number>
+            </el-form-item>
+            <el-form-item label="价格" :label-width="formLabelWidth">
+              <el-input-number
+                v-model="Price"
+                @change="TotalPrice"
+                :min="0"
+                label="价格"
+              ></el-input-number>
+            </el-form-item>
+          </el-form>
+        </div>
         <el-form-item>
           <el-button type="primary" @click="submitForm('ruleForm')">
             确定添加商品
@@ -89,6 +127,14 @@
 export default {
   data() {
     return {
+      show: true,
+      showMore: false,
+      Bprice: 0,
+      Price: 0,
+      formLabelWidth: "100px",
+      formGg: {
+        name: "",
+      },
       ruleForm: {
         name: "",
         info: "",
@@ -99,30 +145,35 @@ export default {
         psf: 0,
         qsj: 0,
       },
+      labelPosition: "left",
+      Lb: {
+        name: "",
+        info: "",
+      },
 
       activeName: "",
       rules: {},
       radio: "",
       options: [
         {
-          value: "选项1",
-          label: "热销榜",
+          name: "选项1",
+          info: "热销榜",
         },
         {
-          value: "选项2",
-          label: "推荐菜",
+          name: "选项2",
+          info: "推荐菜",
         },
         {
-          value: "选项3",
-          label: "火锅",
+          name: "选项3",
+          info: "火锅",
         },
         {
-          value: "选项4",
-          label: "龙须面",
+          name: "选项4",
+          info: "龙须面",
         },
         {
-          value: "选项5",
-          label: "北京烤鸭",
+          name: "选项5",
+          info: "北京烤鸭",
         },
       ],
       value: "",
@@ -137,6 +188,19 @@ export default {
   methods: {
     handleChange(value) {
       console.log(value);
+    },
+    Bigprice(value) {
+      console.log(value);
+    },
+    TotalPrice(value) {
+      console.log(value);
+    },
+    submitLb() {
+      let arrLb = Array.of(this.Lb);
+      arrLb.forEach((item) => {
+        this.options.push(item);
+      });
+      this.$message.success("创建成功");
     },
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
@@ -153,7 +217,7 @@ export default {
             region: this.ruleForm.region,
             gg: this.ruleForm.radio,
             foodstuffSc: this.ruleForm.sc,
-            foodclassify: this.value,
+            // foodclassify: this.value,
             bigprice: this.ruleForm.psf,
             price: this.ruleForm.qsj,
           };
@@ -206,7 +270,8 @@ export default {
   width: 100%;
   margin: 0 auto;
 }
-.radio-el {
-  display: flex;
+.collForm {
+  width: 80%;
+  margin: 0 auto;
 }
 </style>
