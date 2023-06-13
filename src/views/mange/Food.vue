@@ -111,7 +111,7 @@
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">取 消</el-button>
-        <el-button type="primary" @click="saveGg = false">确 定</el-button>
+        <el-button type="primary" @click="editFoodInfo">确 定</el-button>
       </div>
     </el-dialog>
 
@@ -144,7 +144,7 @@
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible1 = false">取 消</el-button>
-        <el-button type="primary" @click="saveGg">确 定</el-button>
+        <el-button type="primary" @click="upDatalist">确 定</el-button>
       </div>
     </el-dialog>
     <div class="kongzhi-container">
@@ -169,6 +169,7 @@ export default {
   data() {
     return {
       foodstuffList: [],
+      editedItem: null,
       currentPage1: 1,
       pageSize: 10,
       totalItems: 0,
@@ -205,17 +206,19 @@ export default {
   },
   methods: {
     handleEdit(index, row) {
+      this.editedItem = { ...row };
+      this.form = { ...row };
       this.tableData = Array.of(row);
       this.form.foodsnm = row.foodsnm;
       this.form.foodsinfo = row.foodsinfo;
       this.form.region = row.foodclassify;
       this.dialogFormVisible = true;
-      // 把foodstuffList中重复的foodclassify数据去掉赋值给foodsclassify数组中
-      // this.foodsclassify = this.foodstuffList
-      //   .map((item) => item.foodclassify)
-      //   .filter((item, index, arr) => {
-      //     return arr.indexOf(item) === index;
-      //   });
+      // 把foodstuffList中重复的foodclassify数据去掉赋值给foodsclassify数组中;
+      this.foodsclassify = this.foodstuffList
+        .map((item) => item.foodclassify)
+        .filter((item, index, arr) => {
+          return arr.indexOf(item) === index;
+        });
     },
     handleDelete(index, row) {
       this.foodstuffList.splice(index, 1);
@@ -240,7 +243,23 @@ export default {
     },
 
     // 保存规格
-    saveGg() {
+    editFoodInfo() {
+      this.dialogFormVisible1 = false;
+      console.log(this.form); // 根据 this.editedItem.id 找到对应的项
+      const index = this.foodstuffList.findIndex(
+        (item) => item.id === this.editedItem.id
+      );
+      if (index !== -1) {
+        // 更新对应项的数据
+        this.foodstuffList[index].foodsnm = this.form.foodsnm;
+        this.foodstuffList[index].foodsinfo = this.form.foodsinfo;
+        this.foodstuffList[index].region = this.form.region;
+        this.foodstuffList[index].name = this.form.name;
+        // 关闭对话框
+        this.dialogFormVisible = false;
+      }
+    },
+    upDatalist() {
       this.dialogFormVisible1 = false;
       this.tableData.push({
         gg: this.form.name,

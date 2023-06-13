@@ -141,6 +141,7 @@ export default {
       editedItem: null,
       dialogTableVisible: false,
       dialogFormVisible: false,
+      localStorageData: [],
       form: {
         shopName: "",
         shopAddress: "",
@@ -162,6 +163,9 @@ export default {
     },
   },
   mounted() {
+    console.log(localStorage.getItem("shopData"));
+    this.localStorageData = JSON.parse(localStorage.getItem("shopData"));
+
     this.fetchData();
   },
   methods: {
@@ -195,8 +199,6 @@ export default {
     fetchData() {
       http.get("/data.json").then((res) => {
         this.businessList = res.data.data.busList;
-
-        // 把数据给form
         this.form = this.businessList;
         this.totalItems = this.businessList.length;
       });
