@@ -23,6 +23,8 @@
           name="username"
           type="text"
           tabindex="1"
+          maxlength="10"
+          minlenrth="5"
           auto-complete="on"
         />
       </el-form-item>
@@ -39,6 +41,8 @@
           placeholder="Password"
           name="password"
           tabindex="2"
+          maxlength="16"
+          minlenrth="8"
           auto-complete="on"
           @keyup.enter.native="handleLogin"
         />
@@ -54,7 +58,6 @@
         type="primary"
         style="width: 100%; margin-bottom: 30px"
         @click.native.prevent="handleLogin"
-        @click="open2"
         >登录</el-button
       >
 

@@ -2,14 +2,14 @@
   <div class="app-container">
     <div style="border: 1px solid #ccc;  padding-left: 33px;" class="iupbox">
       食品种类
-        <el-select v-model="value" placeholder="请选择"  class="iunp"> 
+        <el-select v-model="value" placeholder="请选择"  class="iunp">
     <el-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value">
     </el-option>
-    
+
   </el-select>
     </div>
 
@@ -19,7 +19,7 @@
     <div>猪</div>
     <div>马</div>
   </el-collapse-item>
- 
+
 </el-collapse>
 
 
@@ -33,15 +33,15 @@
       class="demo-ruleForm"
     >
       <el-form-item label="商品名称" prop="name" :rules="nameRules" required>
-        <el-input v-model="ruleForm.name"></el-input>
+        <el-input v-model="ruleForm.name" maxlength="10"></el-input>
       </el-form-item>
       <el-form-item label="食品活动" prop="info">
-        <el-input v-model="ruleForm.info"></el-input>
+        <el-input v-model="ruleForm.info" maxlength="10"></el-input>
       </el-form-item>
       <el-form-item label="食品详情" prop="info">
-        <el-input v-model="ruleForm.info"></el-input>
+        <el-input v-model="ruleForm.info" maxlength="20"></el-input>
       </el-form-item>
-      
+
       <el-form-item label="食品特点" prop="region">
         <el-select v-model="ruleForm.region" placeholder="请选择">
           <el-option label="特点一" value="shanghai"></el-option>
@@ -77,7 +77,7 @@
       </el-form-item>
     </el-form>
      </div>
-    
+
   </div>
 </template>
 
@@ -93,7 +93,7 @@ export default {
         psf: 1,
         qsj: 20,
 
-        
+
       },activeName:"",
       rules:{},
       options: [{
@@ -113,7 +113,7 @@ export default {
           label: '北京烤鸭'
         }],
         value: '',
-      
+
       dialogVisible: false,
       dialogImageUrl: "",
       nameRules: [
@@ -147,13 +147,13 @@ export default {
 .foodxz{
   margin-bottom: 50px;
   border: 1px solid #ccc;
-  
- 
+
+
 }
 .iunp{
   width:600px;
  padding-top: 20px;
- 
+
 }
 .iupbox{
   height: 100px;
