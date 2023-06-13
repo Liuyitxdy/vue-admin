@@ -31,7 +31,7 @@
               <span>{{ props.row.foodstuffSc }}</span>
             </el-form-item>
             <el-form-item label="食品分类">
-              <span>{{ props.row.foodclassify }}</span>
+              <span>{{ props.row.region }}</span>
             </el-form-item>
             <el-form-item label="月销量">
               <span>{{ props.row.foodsSales }}</span>
@@ -218,11 +218,12 @@ export default {
       this.form.region = row.foodclassify;
       this.dialogFormVisible = true;
       // 把foodstuffList中重复的foodclassify数据去掉赋值给foodsclassify数组中;
-      this.foodsclassify = this.foodstuffList
-        .map((item) => item.foodclassify)
-        .filter((item, index, arr) => {
-          return arr.indexOf(item) === index;
-        });
+
+      // this.foodsclassify = this.foodstuffList
+      //   .map((item) => item.foodclassify)
+      //   .filter((item, index, arr) => {
+      //     return arr.indexOf(item) === index;
+      //   });
     },
     handleDelete(index, row) {
       this.foodstuffList.splice(index, 1);
@@ -251,6 +252,7 @@ export default {
         let tableData = [this.localStorageData, ...this.tableData];
         this.foodstuffList = arr;
         this.tableData = tableData;
+        console.log(this.foodstuffList);
       });
     },
     handleChange(value) {
