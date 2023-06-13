@@ -87,10 +87,11 @@ export default {
 }
 
 .pagination-info {
-  margin-right: 5px;
+padding-left: 20px;
+color: #606266;
 }
 
 .kongzhi {
-  margin-left: 2px;
+  margin-left: 10px;
 }
 </style>

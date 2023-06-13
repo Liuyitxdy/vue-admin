@@ -15,9 +15,11 @@
 
  <el-collapse v-model="activeName" accordion class="foodxz">
   <el-collapse-item title="添加食品种类" name="1" style=" margin-left: 340px;">
-    <div>牛</div>
-    <div>猪</div>
-    <div>马</div>
+    <div>黄金糕</div>
+    <div>双皮奶</div>
+    <div>蚵仔煎</div>
+    <div>龙须面</div>
+    <div>北京烤鸭</div>
   </el-collapse-item>
  
 </el-collapse>

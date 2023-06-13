@@ -84,14 +84,17 @@
       </div>
     </el-dialog>
 
-    <div></div>
+    <div class="kongzhi-container">
+      <span class="pagination-info">共 {{ totalItems }} 条</span>
     <pagination
       :current-page.sync="currentPage"
       :total="totalItems"
       :page-size="pageSize"
       @page-change="handlePageChange"
+      class="kongzhi"
     ></pagination>
   </div>
+</div>
 </template>
 
 <script>
@@ -194,5 +197,19 @@ export default {
   margin-right: 0;
   margin-bottom: 0;
   width: 50%;
+}
+.kongzhi-container{
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+.pagination-info {
+padding-left: 20px;
+color: #606266;
+}
+.kongzhi{
+  margin-left: 10px;
 }
 </style>

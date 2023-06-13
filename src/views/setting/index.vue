@@ -1,6 +1,6 @@
 <template>
   <div class="center-container">
-    <h1 class="title">信息</h1>
+    <h1 class="title">管理员信息</h1>
     <el-card class="box-card">
       <div v-for="item in admin" :key="item.id" class="text item">
         <div>姓名：{{ item.adminName }}</div>
@@ -12,10 +12,14 @@
         <div>权限：{{ item.might }}</div>
       </div>
       <div class="text item">更换头像</div>
-      <el-upload class="upload-button" action="/upload" :show-file-list="false">
-        <i class="el-icon-plus"></i>
-        <div class="el-upload__text">点击上传图片</div>
-      </el-upload>
+      <div class="demo-image__preview">
+  <el-image 
+    style="width: 100px; height: 100px"
+    :src="url" 
+    :preview-src-list="srcList">
+  </el-image>
+</div>
+      
     </el-card>
   </div>
 </template>
@@ -27,6 +31,12 @@ export default {
   data() {
     return {
       admin: [],
+      
+       url: 'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg',
+        srcList: [
+          'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg',
+          'https://fuss10.elemecdn.com/1/8e/aeffeb4de74e2fde4bd74fc7b4486jpeg.jpeg'
+        ]
     };
   },
   mounted() {

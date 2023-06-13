@@ -134,12 +134,16 @@
         <el-button type="primary" @click="saveGg">确 定</el-button>
       </div>
     </el-dialog>
+    <div class="kongzhi-container">
+      <span class="pagination-info">共 {{ totalItems }} 条</span>
     <pagination
       :current-page.sync="currentPage1"
       :total="totalItems"
       :page-size="pageSize"
       @page-change="handlePageChange"
+      class="kongzhi"
     ></pagination>
+  </div>
   </div>
 </template>
 
@@ -246,5 +250,20 @@ export default {
 }
 el-table-column {
   background-color: #eef0f5 !important;
+}
+
+.kongzhi-container{
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+.pagination-info {
+padding-left: 20px;
+color: #606266;
+}
+.kongzhi{
+  margin-left: 10px;
 }
 </style>
