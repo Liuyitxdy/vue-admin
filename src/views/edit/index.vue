@@ -1,15 +1,19 @@
 <template>
   <div>
     <div class="home">
-      <div style="width: 1200px;margin: 0 auto;margin-top: 50px">
-
-        <mavon-editor :codeStyle="codeStyle" :toolbars="toolbars" v-model="content" :ishljs="true" ref="md" @change="change"/>
-
+      <div style="width: 1200px; margin: 0 auto; margin-top: 50px">
+        <mavon-editor
+          :codeStyle="codeStyle"
+          :toolbars="toolbars"
+          v-model="content"
+          :ishljs="true"
+          ref="md"
+          @change="change"
+        />
       </div>
     </div>
-      <el-button @click="outputENter" class="btn">提交</el-button>
+    <el-button @click="outputENter" class="btn">提交</el-button>
   </div>
-
 </template>
 
 <script>
@@ -17,9 +21,9 @@ export default {
   data() {
     return {
       content: " ",
-      page_article:undefined,
-      html_content:undefined,
-      md_content:undefined,
+      page_article: undefined,
+      html_content: undefined,
+      md_content: undefined,
       toolbars: {
         bold: true, // 粗体
         italic: true, // 斜体
@@ -49,41 +53,32 @@ export default {
         aligncenter: true, // 居中
         alignright: true, // 右对齐
         subfield: true, // 单双栏模式
-        preview: true // 预览
+        preview: true, // 预览
       },
-      codeStyle:'monokai-sublime',//主题
-      test_html:undefined
+      codeStyle: "monokai-sublime", //主题
+      test_html: undefined,
     };
   },
-  methods:{
-    outputENter(){
-      console.log(JSON.stringify(this.test_html))   //就用这个存数据库  然后进行回显即可
-      this.$axios.post("http://127.0.0.1:3009",{
-        params:{
-          msg:this.test_html
-        }
-      }).then((res)=>{
-        console.log(res)
-        console.log("响应成功")
-      })
-
+  methods: {
+    outputENter() {
+      this.$message.success("提交成功");
+      this.$router.go(0);
     },
-    change(value, render){
+    change(value, render) {
       // render 为 markdown 解析后的结果
       this.test_html = render;
-    }
-  }
+    },
+  },
 };
 </script>
 <style>
-.btn{
+.btn {
   margin-top: 100px;
   margin-left: 800px;
   background-color: #20a0ff;
   color: #ffffff;
 }
-.home{
-
+.home {
   width: 75%;
   border: 1px #ccc solid;
   box-shadow: 5px 5px #cccccc;
@@ -91,4 +86,3 @@ export default {
   margin: 0 auto;
 }
 </style>
-

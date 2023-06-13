@@ -222,6 +222,10 @@ export default {
     },
     handleDelete(index, row) {
       this.foodstuffList.splice(index, 1);
+      this.totalItems--;
+      if (this.currentPage > Math.ceil(this.totalItems / this.pageSize)) {
+        this.currentPage--;
+      }
     },
     handleDelete1(index, row) {
       this.tableData.splice(index, 1);
