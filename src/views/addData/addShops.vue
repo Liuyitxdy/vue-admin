@@ -152,6 +152,7 @@ export default {
             shopSc: this.ruleForm.sc,
           };
           localStorage.setItem("shopData", JSON.stringify(shopData));
+
           this.$message({
             message: "创建成功",
             type: "success",
@@ -160,7 +161,7 @@ export default {
         } else {
           console.log("error submit!!");
           return false;
-        }
+        } 
       });
     },
 
