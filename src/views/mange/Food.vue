@@ -40,7 +40,7 @@
         </template>
       </el-table-column>
       <el-table-column label="食品名称" prop="foodsnm"> </el-table-column>
-      <el-table-column label="食品介绍" prop="foodsp"> </el-table-column>
+      <el-table-column label="食品介绍" prop="foodsinfo"> </el-table-column>
       <el-table-column label="评分" prop="foodstuffSc"> </el-table-column>
       <el-table-column label="操作">
         <template slot-scope="scope">
@@ -163,7 +163,6 @@
 <script>
 import http from "@/api/http.js";
 import Pagination from "@/components/Pagination.vue";
-import tag from "element-ui/packages/tag";
 
 export default {
   data() {
@@ -174,6 +173,8 @@ export default {
       pageSize: 10,
       totalItems: 0,
       tableData: [],
+      localStorageData: [],
+
       dialogFormVisible: false,
       dialogFormVisiblea: false,
       dialogFormVisible1: false,
@@ -183,12 +184,14 @@ export default {
         foodsinfo: "",
         region: "",
         name: "",
+        foodsinfo: "",
       },
       list: [],
-      foodsp: "",
+
       foodsclassify: [],
       bigprice: 0,
       price: 0,
+      gg: "",
     };
   },
   components: {
@@ -237,6 +240,18 @@ export default {
       http.get("/data.json").then((res) => {
         this.foodstuffList = res.data.data.foodList;
         this.totalItems = this.foodstuffList.length;
+
+        this.localStorageData =
+          JSON.parse(localStorage.getItem("shopsData")) || [];
+
+        // 合并数组对象
+        let arr = [this.localStorageData, ...this.foodstuffList];
+
+        let tableData = [this.localStorageData, ...this.tableData];
+        console.log(arr);
+        this.foodstuffList = arr;
+        this.tableData = tableData;
+        console.log("tata", tableData);
       });
     },
     handleChange(value) {
@@ -265,6 +280,7 @@ export default {
     },
     upDatalist() {
       this.dialogFormVisible1 = false;
+
       this.tableData.push({
         gg: this.form.name,
         bigprice: this.bigprice,
