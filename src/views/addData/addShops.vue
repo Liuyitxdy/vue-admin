@@ -232,6 +232,6 @@ export default {
 }
 .hog{
   margin-top: 20px;
-   
+
 }
 </style>
