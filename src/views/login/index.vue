@@ -3,12 +3,14 @@
     <div style="margin-top: 50px">  <h2 >elm后台管理系统</h2></div>
 
     <div class="box">
-      <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+      <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm" >
         <el-form-item   prop="pass"  class="username">
           <el-input type="" placeholder="用户名" v-model="ruleForm.pass" autocomplete="off" maxlength="10"></el-input>
         </el-form-item>
         <el-form-item   prop="checkPass"  class="username">
-          <el-input type="password" placeholder="密码" v-model="ruleForm.checkPass" autocomplete="off" maxlength="16" minlength="8"></el-input>
+          <!-- <el-input type="password" status-icon="false" placeholder="密码" v-model="ruleForm.checkPass"  maxlength="16" minlength="8"></el-input> -->
+          <el-input placeholder="请输入密码" v-model="ruleForm.checkPass"   show-password></el-input>
+
         </el-form-item>
         <el-form-item class="arrow">
           <el-button type="primary" @click="submitForm('ruleForm')" class="arrow">登录</el-button>
@@ -60,8 +62,9 @@ export default {
       ruleForm: {
         pass: '',
         checkPass: '',
-
+       
       },
+       input:'',
       rules: {
         pass: [
           { validator: validatePass, trigger: 'blur' }
@@ -79,7 +82,8 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert('登录成功!');
+          this.$message.success('登陆成功')
+          this.$router.push('/')
         } else {
           console.log('error submit!!');
           return false;
