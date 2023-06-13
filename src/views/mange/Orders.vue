@@ -4,7 +4,9 @@
     <!-- 订单 -->
     <el-table
     :data="ordersList"
-    style="width:100%">
+    style="width:100%"
+    :header-cell-style="{ background: '#f4f3f9', color: '#606266' }"
+      :border="true">
     <el-table-column type="expand">
       <template slot-scope="props">
         <el-form label-position="left" inline class="demo-table-expand">

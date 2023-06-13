@@ -74,7 +74,7 @@
           ></el-input>
         </el-form-item>
         <el-form-item label="食品分类" :label-width="formLabelWidth">
-          <el-select v-model="form.region" placeholder="热销榜">
+          <el-select v-model="form.foodclassify" placeholder="热销榜">
             <el-option
               :label="item"
               :value="item"
@@ -143,7 +143,7 @@
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button @click="dialogFormVisible = false">取 消</el-button>
+        <el-button @click="dialogFormVisible1 = false">取 消</el-button>
         <el-button type="primary" @click="saveGg">确 定</el-button>
       </div>
     </el-dialog>
@@ -177,7 +177,12 @@ export default {
       dialogFormVisiblea: false,
       dialogFormVisible1: false,
       formLabelWidth: "120px",
-      form: [],
+      form: {
+        foodsnm: "",
+        foodsinfo: "",
+        region: "",
+        name: "",
+      },
       list: [],
       foodsp: "",
       foodsclassify: [],
@@ -201,11 +206,9 @@ export default {
   methods: {
     handleEdit(index, row) {
       this.tableData = Array.of(row);
-      this.form = row;
-      // let list = this.tableData;
-      // this.list = list.map((item) => item.foodsp);
-      // list转换字符串
-      // this.foodsp = this.list.join(",");
+      this.form.foodsnm = row.foodsnm;
+      this.form.foodsinfo = row.foodsinfo;
+      this.form.region = row.foodclassify;
       this.dialogFormVisible = true;
       // 把foodstuffList中重复的foodclassify数据去掉赋值给foodsclassify数组中
       // this.foodsclassify = this.foodstuffList
