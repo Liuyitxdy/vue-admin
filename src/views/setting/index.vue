@@ -32,10 +32,10 @@ export default {
     return {
       admin: [],
 
-      url: "https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg",
+      url: "https://img0.baidu.com/it/u=451095071,1856753064&fm=253&fmt=auto&app=138&f=JPEG?w=502&h=500",
       srcList: [
-        "https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg",
-        "https://fuss10.elemecdn.com/1/8e/aeffeb4de74e2fde4bd74fc7b4486jpeg.jpeg",
+        "https://img0.baidu.com/it/u=4163665191,1415521429&fm=253&fmt=auto&app=138&f=JPEG?w=810&h=436",
+        "https://img0.baidu.com/it/u=353157410,4039417319&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=500",
       ],
     };
   },
