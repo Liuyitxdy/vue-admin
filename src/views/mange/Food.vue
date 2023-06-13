@@ -206,6 +206,7 @@ export default {
   },
   mounted() {
     this.fetchData();
+    console.log(localStorage);
   },
   methods: {
     handleEdit(index, row) {
@@ -232,6 +233,7 @@ export default {
     },
     handleDelete1(index, row) {
       this.tableData.splice(index, 1);
+      window.localStorage.removeItem("shopData");
     },
     handlePageChange(page) {
       this.currentPage1 = page;
@@ -241,17 +243,14 @@ export default {
         this.foodstuffList = res.data.data.foodList;
         this.totalItems = this.foodstuffList.length;
 
-        this.localStorageData =
-          JSON.parse(localStorage.getItem("shopsData")) || [];
+        this.localStorageData = JSON.parse(localStorage.getItem("shopsData"));
 
         // 合并数组对象
         let arr = [this.localStorageData, ...this.foodstuffList];
 
         let tableData = [this.localStorageData, ...this.tableData];
-        console.log(arr);
         this.foodstuffList = arr;
         this.tableData = tableData;
-        console.log("tata", tableData);
       });
     },
     handleChange(value) {
