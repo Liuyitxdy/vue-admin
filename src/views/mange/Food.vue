@@ -1,7 +1,11 @@
 <template>
   <div>
     <!-- 订单 -->
-    <el-table :data="displayedFoodList" style="width: 100%; text-align: center">
+    <el-table
+      :data="displayedFoodList"
+      style="width: 100%; text-align: center"
+      :border="true"
+    >
       <el-table-column type="expand">
         <template slot-scope="props">
           <el-form label-position="left" inline class="demo-table-expand">
@@ -56,10 +60,18 @@
     <el-dialog title="修改食品信息" :visible.sync="dialogFormVisible">
       <el-form :model="form">
         <el-form-item label="食品名称" :label-width="formLabelWidth">
-          <el-input v-model="form.foodsnm" autocomplete="off"maxlength="10"></el-input>
+          <el-input
+            v-model="form.foodsnm"
+            autocomplete="off"
+            maxlength="10"
+          ></el-input>
         </el-form-item>
         <el-form-item label="食品介绍" :label-width="formLabelWidth">
-          <el-input v-model="form.foodsinfo" autocomplete="off" maxlength="30"></el-input>
+          <el-input
+            v-model="form.foodsinfo"
+            autocomplete="off"
+            maxlength="30"
+          ></el-input>
         </el-form-item>
         <el-form-item label="食品分类" :label-width="formLabelWidth">
           <el-select v-model="form.region" placeholder="热销榜">
@@ -72,7 +84,6 @@
           </el-select>
         </el-form-item>
         <el-form-item label="食品图片" :label-width="formLabelWidth">
-
         </el-form-item>
         <el-table :data="tableData" style="width: 100%">
           <el-table-column prop="gg" label="规格" width="180">
@@ -100,9 +111,7 @@
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">取 消</el-button>
-        <el-button type="primary" @click="saveGg = false"
-          >确 定</el-button
-        >
+        <el-button type="primary" @click="saveGg = false">确 定</el-button>
       </div>
     </el-dialog>
 
@@ -110,7 +119,11 @@
     <el-dialog title="添加规格" :visible.sync="dialogFormVisible1">
       <el-form :model="form">
         <el-form-item label="规格" :label-width="formLabelWidth" required>
-          <el-input v-model="form.name" autocomplete="off" maxlength="3"></el-input>
+          <el-input
+            v-model="form.name"
+            autocomplete="off"
+            maxlength="3"
+          ></el-input>
         </el-form-item>
         <el-form-item label="包装费" :label-width="formLabelWidth">
           <el-input-number
@@ -136,15 +149,14 @@
     </el-dialog>
     <div class="kongzhi-container">
       <span class="pagination-info">共 {{ totalItems }} 条</span>
-    <pagination
-
-      :current-page.sync="currentPage1"
-      :total="totalItems"
-      :page-size="pageSize"
-      @page-change="handlePageChange"
-      class="kongzhi"
-    ></pagination>
-  </div>
+      <pagination
+        :current-page.sync="currentPage1"
+        :total="totalItems"
+        :page-size="pageSize"
+        @page-change="handlePageChange"
+        class="kongzhi"
+      ></pagination>
+    </div>
   </div>
 </template>
 
@@ -201,7 +213,7 @@ export default {
       //   .filter((item, index, arr) => {
       //     return arr.indexOf(item) === index;
       //   });
-     },
+    },
     handleDelete(index, row) {
       this.foodstuffList.splice(index, 1);
     },
@@ -254,18 +266,17 @@ el-table-column {
   background-color: #eef0f5 !important;
 }
 
-.kongzhi-container{
+.kongzhi-container {
   display: flex;
   align-items: center;
   margin-top: 10px;
   margin-bottom: 10px;
-
 }
 .pagination-info {
-padding-left: 20px;
-color: #606266;
+  padding-left: 20px;
+  color: #606266;
 }
-.kongzhi{
+.kongzhi {
   margin-left: 10px;
 }
 </style>

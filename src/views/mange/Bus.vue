@@ -45,9 +45,6 @@
       </el-table-column>
       <el-table-column label="店铺介绍" prop="shopIntroduce" align="center">
       </el-table-column>
-      <el-table-column label="店铺名称" prop="shopName"></el-table-column>
-      <el-table-column label="店铺地址" prop="shopAddress"> </el-table-column>
-      <el-table-column label="店铺介绍" prop="shopIntroduce"> </el-table-column>
 
       <el-table-column label="操作" prop="desc">
         <template slot-scope="scope">
@@ -71,17 +68,34 @@
     </el-table>
     <el-dialog title="修改店铺信息" :visible.sync="dialogFormVisible">
       <el-form :model="form">
-        <el-form-item label="店铺名称" :label-width="formLabelWidth" >
-          <el-input v-model="form.shopName" autocomplete="off"  maxlength="10"></el-input>
+        <el-form-item label="店铺名称" :label-width="formLabelWidth">
+          <el-input
+            v-model="form.shopName"
+            autocomplete="off"
+            maxlength="10"
+          ></el-input>
         </el-form-item>
         <el-form-item label="详细地址" :label-width="formLabelWidth">
-          <el-input v-model="form.shopAddress" autocomplete="off"  maxlength="20"></el-input>
+          <el-input
+            v-model="form.shopAddress"
+            autocomplete="off"
+            maxlength="20"
+          ></el-input>
         </el-form-item>
         <el-form-item label="店铺介绍" :label-width="formLabelWidth">
-          <el-input v-model="form.shopIntroduce" autocomplete="off"  maxlength="30"></el-input>
+          <el-input
+            v-model="form.shopIntroduce"
+            autocomplete="off"
+            maxlength="30"
+          ></el-input>
         </el-form-item>
         <el-form-item label="联系电话" :label-width="formLabelWidth">
-          <el-input v-model="form.shopPhone" autocomplete="off"  maxlength="11" minlength="11"></el-input>
+          <el-input
+            v-model="form.shopPhone"
+            autocomplete="off"
+            maxlength="11"
+            minlength="11"
+          ></el-input>
         </el-form-item>
         <el-form-item label="店铺分类" :label-width="formLabelWidth">
           <el-select v-model="form.shopClassify" placeholder="快餐便当/简餐">
@@ -90,7 +104,6 @@
           </el-select>
         </el-form-item>
         <el-form-item label="商铺图片" :label-width="formLabelWidth">
-
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -149,12 +162,6 @@ export default {
     },
   },
   mounted() {
-    const shopData = localStorage.getItem("shopData");
-    if (shopData) {
-      this.businessList.push(JSON.parse(shopData));
-      this.totalItems++;
-    }
-
     this.fetchData();
   },
   methods: {
@@ -188,8 +195,7 @@ export default {
     fetchData() {
       http.get("/data.json").then((res) => {
         this.businessList = res.data.data.busList;
-        const shopData = JSON.parse(localStorage.getItem("shopData")) || [];
-        this.businessList = shopData;
+
         // 把数据给form
         this.form = this.businessList;
         this.totalItems = this.businessList.length;

@@ -8,7 +8,11 @@
       class="demo-ruleForm"
     >
       <el-form-item label="店铺名称" prop="name">
-        <el-input v-model="ruleForm.name" maxlength="5"minlength="3"></el-input>
+        <el-input
+          v-model="ruleForm.name"
+          maxlength="5"
+          minlength="3"
+        ></el-input>
       </el-form-item>
       <el-form-item label="详细地址" prop="address">
         <el-input v-model="ruleForm.address" maxlength="20"></el-input>
@@ -16,7 +20,11 @@
       </el-form-item>
 
       <el-form-item label="联系电话" prop="phone">
-        <el-input v-model="ruleForm.phone" maxlength="11" minLength="11"></el-input>
+        <el-input
+          v-model="ruleForm.phone"
+          maxlength="11"
+          minLength="11"
+        ></el-input>
       </el-form-item>
       <el-form-item label="店铺简介" prop="info">
         <el-input v-model="ruleForm.info" maxlength="30"></el-input>
@@ -107,6 +115,7 @@ export default {
         by: "",
         nowCity: "成都",
         psf: "",
+        sc: 0,
       },
       psf: 4.5,
       qsj: 20,
@@ -140,7 +149,7 @@ export default {
             shopIntroduce: this.ruleForm.info,
             shopPhone: this.ruleForm.phone,
             shopClassify: this.ruleForm.region,
-            shopImage: "",
+            shopSc: this.ruleForm.sc,
           };
           localStorage.setItem("shopData", JSON.stringify(shopData));
           this.$message({
