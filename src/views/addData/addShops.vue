@@ -81,7 +81,48 @@
           label="起送价"
         ></el-input-number>
       </el-form-item>
-      <el-form-item>
+      <el-form-item label="优惠活动" prop="huodong">
+        <el-select v-model="ruleForm.huodong" placeholder="优惠活动">
+          <el-option label="满减优惠" value="youhui"></el-option>
+          <el-option label="凑单" value="coudan"></el-option>
+        </el-select>
+      </el-form-item>
+      <div style="width: 800px;margin: 0 auto">
+        <el-table
+          :data="tableData"
+          style="width: 100%"
+          :header-cell-style="{ background: '#f4f3f9', color: '#606266' }"
+          :border="true"
+        >
+          <el-table-column
+            prop="date"
+            label="活动标题"
+            width="180">
+          </el-table-column>
+          <el-table-column
+            prop="name"
+            label="活动名称"
+            width="180">
+          </el-table-column>
+          <el-table-column
+            prop="address"
+            label="活动详情">
+          </el-table-column>
+          <el-table-column
+            prop="address"
+            label="操作">
+            <template slot-scope="scope">
+              <el-button
+                size="mini"
+                type="danger"
+                @click="handleDelete(scope.$index, scope.row)"
+              >删除</el-button
+              >
+            </template>
+          </el-table-column>
+        </el-table>
+      </div>
+      <el-form-item class="hog">
         <el-button type="primary" @click="submitForm('ruleForm')"
           >立即创建</el-button
         >
@@ -94,7 +135,11 @@
 <script>
 export default {
   data() {
-    return {
+    return { tableData: [{
+        date: '减',
+        name: '满减优惠',
+        address: '满30减50，满60减8'
+      }],
       value1: new Date(2023, 6, 11, 6),
       value2: new Date(2024, 1, 1, 20),
       ruleForm: {
@@ -168,6 +213,14 @@ export default {
     resetForm(formName) {
       this.$refs[formName].resetFields();
     },
+    handleDelete(index, row) {
+      console.log(index, row);
+      this.tableData.splice(index, 1);
+      this.totalItems--;
+      if (this.currentPage > Math.ceil(this.totalItems / this.pageSize)) {
+        this.currentPage--;
+      }
+    },
   },
 };
 </script>
@@ -176,5 +229,9 @@ export default {
 .app-container {
   width: 800px;
   margin: 0 auto;
+}
+.hog{
+  margin-top: 20px;
+   
 }
 </style>

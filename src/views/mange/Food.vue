@@ -184,7 +184,7 @@ export default {
         foodsinfo: "",
         region: "",
         name: "",
-        foodsinfo: "",
+
       },
       list: [],
 
