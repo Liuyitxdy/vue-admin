@@ -80,8 +80,8 @@ export default {
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
+  width: 80%; /* 使用百分比来设置宽度 */
 }
-
 .upload-button {
   display: flex;
   justify-content: center;
