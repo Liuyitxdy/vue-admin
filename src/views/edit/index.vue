@@ -1,13 +1,16 @@
 <template>
   <div>
     <div class="home">
-      <div style="width: 1200px;margin: 0 auto;margin-top: 50px">
+      <div style="width:90%;margin: 0 auto;margin-top: 50px">
 
         <mavon-editor :codeStyle="codeStyle" :toolbars="toolbars" v-model="content" :ishljs="true" ref="md" @change="change"/>
 
       </div>
     </div>
-      <el-button @click="outputENter" class="btn">提交</el-button>
+    <div class="btnbox">
+<el-button @click="outputENter" class="btn">提交</el-button>
+    </div>
+      
   </div>
 
 </template>
@@ -16,7 +19,7 @@
 export default {
   data() {
     return {
-      content: " ",
+      content: "",
       page_article:undefined,
       html_content:undefined,
       md_content:undefined,
@@ -57,16 +60,12 @@ export default {
   },
   methods:{
     outputENter(){
-      console.log(JSON.stringify(this.test_html))   //就用这个存数据库  然后进行回显即可
-      this.$axios.post("http://127.0.0.1:3009",{
-        params:{
-          msg:this.test_html
-        }
-      }).then((res)=>{
-        console.log(res)
-        console.log("响应成功")
-      })
-
+    if(this.content != ''){
+        this.$message.success('提交成功')
+      this.$router.go(0)
+    }else{
+      this.$message.error("请输入文字")
+    }
     },
     change(value, render){
       // render 为 markdown 解析后的结果
@@ -76,9 +75,14 @@ export default {
 };
 </script>
 <style>
+.btnbox{
+  
+  margin: 0 auto;
+  width: 100px;
+}
 .btn{
-  margin-top: 100px;
-  margin-left: 800px;
+  margin-top: 50px;
+  text-align: center;
   background-color: #20a0ff;
   color: #ffffff;
 }
