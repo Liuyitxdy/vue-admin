@@ -31,7 +31,7 @@
               <span>{{ props.row.foodstuffSc }}</span>
             </el-form-item>
             <el-form-item label="食品分类">
-              <span>{{ props.row.foodclassify }}</span>
+              <span>{{ props.row.region }}</span>
             </el-form-item>
             <el-form-item label="月销量">
               <span>{{ props.row.foodsSales }}</span>
@@ -206,6 +206,7 @@ export default {
   },
   mounted() {
     this.fetchData();
+    console.log(localStorage);
   },
   methods: {
     handleEdit(index, row) {
@@ -217,11 +218,12 @@ export default {
       this.form.region = row.foodclassify;
       this.dialogFormVisible = true;
       // 把foodstuffList中重复的foodclassify数据去掉赋值给foodsclassify数组中;
-      this.foodsclassify = this.foodstuffList
-        .map((item) => item.foodclassify)
-        .filter((item, index, arr) => {
-          return arr.indexOf(item) === index;
-        });
+
+      // this.foodsclassify = this.foodstuffList
+      //   .map((item) => item.foodclassify)
+      //   .filter((item, index, arr) => {
+      //     return arr.indexOf(item) === index;
+      //   });
     },
     handleDelete(index, row) {
       this.foodstuffList.splice(index, 1);
@@ -232,6 +234,7 @@ export default {
     },
     handleDelete1(index, row) {
       this.tableData.splice(index, 1);
+      window.localStorage.removeItem("shopData");
     },
     handlePageChange(page) {
       this.currentPage1 = page;
@@ -241,17 +244,15 @@ export default {
         this.foodstuffList = res.data.data.foodList;
         this.totalItems = this.foodstuffList.length;
 
-        this.localStorageData =
-          JSON.parse(localStorage.getItem("shopsData")) || [];
+        this.localStorageData = JSON.parse(localStorage.getItem("shopsData"));
 
         // 合并数组对象
         let arr = [this.localStorageData, ...this.foodstuffList];
 
         let tableData = [this.localStorageData, ...this.tableData];
-        console.log(arr);
         this.foodstuffList = arr;
         this.tableData = tableData;
-        console.log("tata", tableData);
+        console.log(this.foodstuffList);
       });
     },
     handleChange(value) {
