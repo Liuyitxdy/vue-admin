@@ -184,7 +184,6 @@ export default {
         foodsinfo: "",
         region: "",
         name: "",
-
       },
       list: [],
 
@@ -244,15 +243,17 @@ export default {
         this.foodstuffList = res.data.data.foodList;
         this.totalItems = this.foodstuffList.length;
 
-        this.localStorageData = JSON.parse(localStorage.getItem("shopsData"));
+        if (localStorage.getItem("shopsData")) {
+          this.localStorageData = JSON.parse(localStorage.getItem("shopsData"));
 
-        // 合并数组对象
-        let arr = [this.localStorageData, ...this.foodstuffList];
+          // 合并数组对象
+          let arr = [this.localStorageData, ...this.foodstuffList];
 
-        let tableData = [this.localStorageData, ...this.tableData];
-        this.foodstuffList = arr;
-        this.tableData = tableData;
-        console.log(this.foodstuffList);
+          let tableData = [this.localStorageData, ...this.tableData];
+          this.foodstuffList = arr;
+          this.tableData = tableData;
+          console.log(this.foodstuffList);
+        }
       });
     },
     handleChange(value) {

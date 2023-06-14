@@ -11,7 +11,7 @@
         label-width="100px"
         class="demo-ruleForm"
       >
-        <el-form-item prop="pass" class="username">
+        <el-form-item prop="username" class="username">
           <el-input
             type=""
             placeholder="用户名"
@@ -20,7 +20,7 @@
             maxlength="10"
           ></el-input>
         </el-form-item>
-        <el-form-item prop="checkPass" class="username">
+        <el-form-item prop="password" class="username">
           <!-- <el-input type="password" status-icon="false" placeholder="密码" v-model="ruleForm.checkPass"  maxlength="16" minlength="8"></el-input> -->
           <el-input
             placeholder="请输入密码"
@@ -76,6 +76,12 @@ export default {
           title: "错误",
           message: "请输入密码",
         });
+      } else if (value.length < 6) {
+        callback(new Error("密码最少6位数"));
+        this.$notify.error({
+          title: "错误",
+          message: "密码长度不符合要求",
+        });
       } else {
         callback();
       }
@@ -110,7 +116,11 @@ export default {
           } else {
             setTimeout(() => {
               this.$message.error("登陆失败，请检查用户名和密码");
-            }, 1500);
+              this.$notify.error({
+                title: "错误",
+                message: "请检查用户名或密码",
+              });
+            }, 1000);
           }
         }
       });
