@@ -22,10 +22,10 @@
             :model="Lb"
           >
             <el-form-item label="种类概况">
-              <el-input v-model="Lb.name"></el-input>
+              <el-input v-model="Lb.name" maxlength="10"></el-input>
             </el-form-item>
             <el-form-item label="种类名称">
-              <el-input v-model="Lb.info"></el-input>
+              <el-input v-model="Lb.info" maxlength="10"></el-input>
             </el-form-item>
             <el-form-item>
               <el-button type="primary" @click="submitLb">立即创建</el-button>

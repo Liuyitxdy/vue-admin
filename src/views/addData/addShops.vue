@@ -102,11 +102,11 @@
           :header-cell-style="{ background: '#f4f3f9', color: '#606266' }"
           :border="true"
         >
-          <el-table-column prop="date" label="活动标题" width="180">
+          <el-table-column prop="data" label="活动标题" width="180">
           </el-table-column>
           <el-table-column prop="name" label="活动名称" width="180">
           </el-table-column>
-          <el-table-column prop="address" label="活动详情"> </el-table-column>
+          <el-table-column prop="info" label="活动详情"> </el-table-column>
           <el-table-column prop="address" label="操作">
             <template slot-scope="scope">
               <el-button
@@ -131,18 +131,27 @@
 
     <el-dialog title="收货地址" :visible.sync="openForm">
       <el-form :model="form">
+        <el-form-item label="活动标题" :label-width="formLabelWidth">
+          <el-input
+            v-model="form.title"
+            maxlength="8"
+            autocomplete="off"
+          ></el-input>
+        </el-form-item>
         <el-form-item label="活动名称" :label-width="formLabelWidth">
-          <el-input v-model="form.name" autocomplete="off"></el-input>
+          <el-input
+            v-model="form.name"
+            maxlength="20"
+            autocomplete="off"
+          ></el-input>
         </el-form-item>
         <el-form-item label="活动区域" :label-width="formLabelWidth">
-          <el-input v-model="form.region"></el-input>
+          <el-input v-model="form.info" maxlength="20"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button @click="dialogFormVisible = false">取 消</el-button>
-        <el-button type="primary" @click="dialogFormVisible = false"
-          >确 定</el-button
-        >
+        <el-button @click="openForm = false">取 消</el-button>
+        <el-button type="primary" @click="submitAddData">确 定</el-button>
       </div>
     </el-dialog>
   </div>
@@ -155,14 +164,9 @@ export default {
       openForm: false,
       formLabelWidth: "120px",
       form: {
+        title: "",
         name: "",
-        region: "",
-        date1: "",
-        date2: "",
-        delivery: false,
-        type: [],
-        resource: "",
-        desc: "",
+        info: "",
       },
       option: [
         {
@@ -180,9 +184,9 @@ export default {
       ],
       tableData: [
         {
-          date: "减",
+          data: "减",
           name: "满减优惠",
-          address: "满30减50，满60减8",
+          info: "满30减50，满60减8",
         },
       ],
       value1: new Date(2023, 6, 11, 6),
@@ -268,7 +272,14 @@ export default {
     },
     openDialogAddData() {
       this.openForm = true;
-      console.log(11);
+    },
+    submitAddData() {
+      this.tableData.push({
+        data: this.form.title,
+        name: this.form.name,
+        info: this.form.info,
+      });
+      this.openForm = false;
     },
   },
 };

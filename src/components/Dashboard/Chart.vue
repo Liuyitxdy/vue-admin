@@ -74,12 +74,12 @@ export default {
         toolbox: {
           show: true,
           feature: {
-            dataZoom: {
-              yAxisIndex: "none",
-            },
-            dataView: {
-              readOnly: false,
-            },
+            // dataZoom: {
+            //   yAxisIndex: "none",
+            // },
+            // dataView: {
+            //   readOnly: false,
+            // },
             magicType: {
               //配置可以动态切换的类型：
               type: ["line", "bar"],

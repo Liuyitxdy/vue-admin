@@ -104,18 +104,18 @@ export default {
   },
   methods: {
     submitForm(formName) {
+      this.loading = true;
       this.$refs[formName].validate((valid) => {
         if (valid) {
           if (
             this.ruleForm.username == "admin" &&
             this.ruleForm.password == "adminadmin"
           ) {
-            this.loading = true;
             setTimeout(() => {
               this.$message.success("登陆成功");
               this.$router.push("/");
               this.loading = false;
-            }, 1500);
+            }, 1000);
           } else {
             setTimeout(() => {
               this.$message.error("登陆失败，请检查用户名和密码");
@@ -123,6 +123,7 @@ export default {
                 title: "错误",
                 message: "请检查用户名或密码",
               });
+              this.loading = false;
             }, 1000);
           }
         }
