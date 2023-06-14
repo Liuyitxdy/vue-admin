@@ -233,7 +233,9 @@ export default {
     },
     handleDelete1(index, row) {
       this.tableData.splice(index, 1);
-      window.localStorage.removeItem("shopData");
+      if (localStorage.getItem("shopsData")) {
+        localStorage.removeItem("shopsData");
+      }
     },
     handlePageChange(page) {
       this.currentPage1 = page;

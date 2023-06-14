@@ -82,41 +82,38 @@
         ></el-input-number>
       </el-form-item>
       <el-form-item label="优惠活动" prop="huodong">
-        <el-select v-model="ruleForm.huodong" placeholder="优惠活动">
-          <el-option label="满减优惠" value="youhui"></el-option>
-          <el-option label="凑单" value="coudan"></el-option>
+        <el-select
+          v-model="ruleForm.huodong"
+          placeholder="优惠活动"
+          @change="openDialogAddData"
+        >
+          <el-option
+            v-for="(item, index) in option"
+            :key="index"
+            :label="item.label"
+            :value="item.value"
+          ></el-option>
         </el-select>
       </el-form-item>
-      <div style="width: 800px;margin: 0 auto">
+      <div style="width: 800px; margin: 0 auto">
         <el-table
           :data="tableData"
           style="width: 100%"
           :header-cell-style="{ background: '#f4f3f9', color: '#606266' }"
           :border="true"
         >
-          <el-table-column
-            prop="date"
-            label="活动标题"
-            width="180">
+          <el-table-column prop="date" label="活动标题" width="180">
           </el-table-column>
-          <el-table-column
-            prop="name"
-            label="活动名称"
-            width="180">
+          <el-table-column prop="name" label="活动名称" width="180">
           </el-table-column>
-          <el-table-column
-            prop="address"
-            label="活动详情">
-          </el-table-column>
-          <el-table-column
-            prop="address"
-            label="操作">
+          <el-table-column prop="address" label="活动详情"> </el-table-column>
+          <el-table-column prop="address" label="操作">
             <template slot-scope="scope">
               <el-button
                 size="mini"
                 type="danger"
                 @click="handleDelete(scope.$index, scope.row)"
-              >删除</el-button
+                >删除</el-button
               >
             </template>
           </el-table-column>
@@ -129,17 +126,65 @@
         <el-button @click="resetForm('ruleForm')">重置</el-button>
       </el-form-item>
     </el-form>
+
+    <!-- dialog -->
+
+    <el-dialog title="收货地址" :visible.sync="openForm">
+      <el-form :model="form">
+        <el-form-item label="活动名称" :label-width="formLabelWidth">
+          <el-input v-model="form.name" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="活动区域" :label-width="formLabelWidth">
+          <el-input v-model="form.region"></el-input>
+        </el-form-item>
+      </el-form>
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="dialogFormVisible = false">取 消</el-button>
+        <el-button type="primary" @click="dialogFormVisible = false"
+          >确 定</el-button
+        >
+      </div>
+    </el-dialog>
   </div>
 </template>
 
 <script>
 export default {
   data() {
-    return { tableData: [{
-        date: '减',
-        name: '满减优惠',
-        address: '满30减50，满60减8'
-      }],
+    return {
+      openForm: false,
+      formLabelWidth: "120px",
+      form: {
+        name: "",
+        region: "",
+        date1: "",
+        date2: "",
+        delivery: false,
+        type: [],
+        resource: "",
+        desc: "",
+      },
+      option: [
+        {
+          value: "manjian",
+          label: "满减优惠",
+        },
+        {
+          value: "xianshi",
+          label: "限时优惠",
+        },
+        {
+          value: "bazhe",
+          label: "八折优惠",
+        },
+      ],
+      tableData: [
+        {
+          date: "减",
+          name: "满减优惠",
+          address: "满30减50，满60减8",
+        },
+      ],
       value1: new Date(2023, 6, 11, 6),
       value2: new Date(2024, 1, 1, 20),
       ruleForm: {
@@ -221,6 +266,10 @@ export default {
         this.currentPage--;
       }
     },
+    openDialogAddData() {
+      this.openForm = true;
+      console.log(11);
+    },
   },
 };
 </script>
@@ -230,8 +279,7 @@ export default {
   width: 800px;
   margin: 0 auto;
 }
-.hog{
+.hog {
   margin-top: 20px;
-
 }
 </style>

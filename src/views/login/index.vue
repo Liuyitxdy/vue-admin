@@ -33,11 +33,10 @@
         <el-form-item class="arrow">
           <!-- <el-button type="primary" @click="submitForm('ruleForm')" class="arrow">登录</el-button> -->
           <el-button
-            plain
             class="arrow"
             type="primary"
             @click="submitForm('ruleForm')"
-            :loading="false"
+            :loading="loading"
             >登录</el-button
           >
         </el-form-item>
@@ -55,7 +54,7 @@
 <script>
 export default {
   data() {
-    var validatePass = (rule, value, callback) => {
+    var checkUserName = (rule, value, callback) => {
       if (value === "") {
         callback(new Error("请输入用户名"));
         this.$notify.error({
@@ -63,13 +62,17 @@ export default {
           message: "请输入用户名",
         });
       } else {
-        if (this.ruleForm.checkPass !== "") {
-          this.$refs.ruleForm.validateField("checkPass");
+        if (value.length < 3) {
+          callback(new Error("用户名最少3位数"));
+          this.$notify.error({
+            title: "错误",
+            message: "用户名长度不符合要求",
+          });
         }
         callback();
       }
     };
-    var validatePass2 = (rule, value, callback) => {
+    var checkPassWord = (rule, value, callback) => {
       if (value === "") {
         callback(new Error("请输入密码"));
         this.$notify.error({
@@ -94,8 +97,8 @@ export default {
       },
       input: "",
       rules: {
-        username: [{ validator: validatePass, trigger: "blur" }],
-        password: [{ validator: validatePass2, trigger: "blur" }],
+        username: [{ validator: checkUserName, trigger: "blur" }],
+        password: [{ validator: checkPassWord, trigger: "blur" }],
       },
     };
   },
@@ -141,7 +144,7 @@ export default {
 }
 h2 {
   text-align: center;
-  bottom: 550px;
+  color: white;
   padding: 0;
   margin-top: 50px;
 }
